@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "RandomNumberApp",
-    "slug": "RandomNumberApp",
+    "name": "Random Number",
+    "slug": "randomnumber",
     "platforms": [
       "ios",
       "android",
@@ -13,7 +13,7 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#100027"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
