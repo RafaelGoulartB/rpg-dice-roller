@@ -1,6 +1,6 @@
 import React from 'react';
 import { Switch } from 'react-native';
-import { HeaderContainer, HeaderTitle, SwitchTheme } from './styles'
+import { HeaderContainer, HeaderTitle, SwitchTheme } from '../../styles'
 
 export default function Header({
   darkModeValue, onDarkModeChange, pageTitle

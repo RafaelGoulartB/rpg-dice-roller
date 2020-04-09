@@ -1,6 +1,7 @@
 import styled from "styled-components/native";
 import Constants from 'expo-constants';
 
+// Header
 export const HeaderContainer = styled.View`
     flex-direction: row;
     background: ${props => props.theme.secondaryColor};
@@ -16,6 +17,12 @@ export const HeaderTitle = styled.Text`
     margin-left: 25px;
 `;
 
-export const SwitchTheme = styled.Switch`
+export const SwitchTheme = styled.Switch``;
 
+// Global
+export const PageContainer = styled.View`
+    background-color: ${props => props.theme.background};
+    height: 100%;
 `;
+
+// Number Page

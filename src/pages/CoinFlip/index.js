@@ -1,8 +1,13 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { View, Text } from 'react-native';
+import {
+  PageContainer
+} from '../../styles';
 
-export default function Number() {
+export default function CoinFlip() {
   return (
-    <Text>Coin Flip</Text>
+    <PageContainer>
+      <Text>Coin Flip</Text>
+    </PageContainer>
   );
 }

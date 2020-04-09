@@ -1,8 +1,13 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { View ,Text } from 'react-native';
+import {
+  PageContainer
+} from '../../styles';
 
 export default function Number() {
   return (
-    <Text>Number</Text>
+    <PageContainer>
+      <Text>Number</Text>
+    </PageContainer>
   );
 }

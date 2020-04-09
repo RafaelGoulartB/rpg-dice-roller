@@ -1,8 +1,13 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { View, Text } from 'react-native';
+import {
+  PageContainer
+} from '../../styles';
 
-export default function Number() {
+export default function DiceRoll() {
   return (
-    <Text>Dice Roll</Text>
+    <PageContainer>
+      <Text>DiceRoll</Text>
+    </PageContainer>
   );
 }
