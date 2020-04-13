@@ -6,4 +6,6 @@ export default {
   label: '#fff',
   primaryText: '#fff',
   secondaryText: '#fff',
+  coinBcg: '#555555',
+  coinBorder: '#a7a7a7',
 };
