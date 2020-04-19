@@ -72,7 +72,45 @@ export const ResulBooble = styled.Text`
 `;
 
 // Number Page
+export const NumberContentBox = styled(ContentBox)`
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
 
+`;
+export const InputBox = styled.View``;
+export const InputLabel = styled.Text`
+    font-size: 12px;
+    color: ${props => props.theme.primaryText};
+    margin-bottom: 2px;
+`;
+export const InputField = styled.TextInput`
+    width: 120px;
+    height: 25px;
+    border: 1px solid ${props => props.theme.label};
+    border-radius: 2px;
+    padding-left: 8px;
+    margin-bottom: 28px;
+    color: ${props => props.theme.primaryText};
+`;
+export const SwitchRepeat = styled.View`
+    width: 120px;
+    height: 25px;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #fff;
+    border-radius: 2px;
+`;
+export const SwitchRepeatBtn = styled.TouchableOpacity`
+    width: 49.8%;
+    background-color: ${props => props.theme.secondaryColor};
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+`;
+export const SwitchRepeatText = styled(TextButton)`
+    font-weight: normal;
+`;
 
 // Coin Flip
 export const CoinContentBox = styled(ContentBox)`

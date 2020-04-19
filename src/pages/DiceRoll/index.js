@@ -1,13 +1,14 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import {
-  PageContainer
+  PageContainer,
+  ContentBox
 } from '../../styles';
 
 export default function DiceRoll() {
   return (
     <PageContainer>
-      <Text>DiceRoll</Text>
+      <ContentBox></ContentBox>
     </PageContainer>
   );
 }

@@ -33,7 +33,7 @@ export default function Routes() {
         <Tab.Navigator
           activeColor="#fff"
           inactiveColor="#b0b0b0"
-          barStyle={{ backgroundColor: '#6200ee' }}
+          barStyle={{ backgroundColor: dark ? '#1d1d1d':'#6200ee' }}
         >
           <Tab.Screen 
             name="Number" 
