@@ -58,6 +58,7 @@ export const ResultBox = styled(ContentBox)`
 export const ResultText = styled.Text`
     color: ${props => props.theme.primaryText};
     margin-right: 12px;
+    padding-right: 200px;
 `;
 export const ResultBooble = styled.Text`
     color: ${props => props.theme.secondaryText};
