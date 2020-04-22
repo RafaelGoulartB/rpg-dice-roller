@@ -19,12 +19,22 @@ import d20Img from '../../assets/d20.png';
 
 export default function DiceRoll() {
   const [diceImg, setDiceImg] = useState(d6Img);
-  const mimNumber = 1;
   const [maxNumber, setMaxNumber] = useState(6);
+  const [diceResult, setDiceResult] = useState(1);
+  const [resultList, setResultList] = useState([]);
 
   function handleDiceChange(image, number) {
     setDiceImg(image);
-    setMaxNumber(number)
+    setMaxNumber(number);
+    setResultList([])
+  }
+
+  function handleDiceRoll() {
+    const randomNumber = Math.floor(Math.random() * Math.floor(maxNumber));
+    const diceNumber = randomNumber+1;
+
+    setDiceResult(diceNumber);
+    setResultList([diceNumber, ...resultList]);
   }
 
   return (
@@ -58,13 +68,17 @@ export default function DiceRoll() {
         </SwitchDice>
       </DiceContextBox>
 
-      <MainButton>
+      <MainButton
+        onPress={() => handleDiceRoll()}
+      >
         <TextButton>Roll</TextButton>
       </MainButton>
 
       <ResultBox style={{elevation: 3}}>
         <ResultText>Result:</ResultText>
-        <ResultBooble>5</ResultBooble>
+        {resultList.map((result, index) => (
+          <ResultBooble key={index}>{result}</ResultBooble>
+        ))}
       </ResultBox>
 
     </PageContainer>
