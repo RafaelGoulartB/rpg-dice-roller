@@ -59,7 +59,7 @@ export const ResultText = styled.Text`
     color: ${props => props.theme.primaryText};
     margin-right: 12px;
 `;
-export const ResulBooble = styled.Text`
+export const ResultBooble = styled.Text`
     color: ${props => props.theme.secondaryText};
     background-color: ${props => props.theme.secondaryColor};
     width: 25px;
@@ -112,6 +112,35 @@ export const SwitchRepeatText = styled(TextButton)`
     font-weight: normal;
 `;
 
+// Dice Roll
+export const DiceContextBox = styled(ContentBox)`
+    align-items: center;
+    padding-right: 0px;
+    padding-left: 0px;
+`;
+export const SwitchDice = styled.View`
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border-top-width: 1px;
+    border-top-color: ${props => props.theme.primaryText};
+    border-style: solid;
+    margin-top: 42px;
+`;
+export const SwitchDiceButton = styled.TouchableOpacity`
+    width: 25%;
+    margin-top: 22px;
+    margin-top: 22px;
+`;
+export const SwitchDiceButtonText = styled.Text`
+    font-size: 18px;
+    text-align: center;
+    color: ${props => props.theme.primaryText};
+    text-align: center;
+`;
+
+
 // Coin Flip
 export const CoinContentBox = styled(ContentBox)`
     justify-content: center;
@@ -133,7 +162,7 @@ export const CoinText = styled.Text`
     font-weight: bold;
     color: ${props => props.theme.primaryText};
 `;
-export const CoinResultBooble = styled(ResulBooble)`
+export const CoinResultBooble = styled(ResultBooble)`
     width: 65px;
     height: 28px;
     line-height: 26px;
