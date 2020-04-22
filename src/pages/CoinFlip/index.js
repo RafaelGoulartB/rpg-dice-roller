@@ -7,10 +7,11 @@ import {
   MainButton,
   TextButton,
   ResultBox,
+  ResultList,
   ResultText,
   CoinResultBooble,
 } from '../../styles';
-import { FlatList } from 'react-native-gesture-handler';
+import { View } from 'react-native';
 
 export default function Number() {
   const [coin, setCoin] = useState('Flip Me');
@@ -40,9 +41,16 @@ export default function Number() {
 
       <ResultBox style={{elevation: 3}}>
         <ResultText>Result:</ResultText>
-        {resultList.map((result, index) => (
-          <CoinResultBooble key={index}>{result}</CoinResultBooble>
-        ))}
+        <ResultList>
+          <CoinResultBooble>{coin}</CoinResultBooble>
+        </ResultList>
+
+        <ResultText>Result History:</ResultText>
+        <ResultList>
+          {resultList.map((result, index) => (
+            <CoinResultBooble key={index}>{result}</CoinResultBooble>
+          ))}
+        </ResultList>
       </ResultBox>
     </PageContainer>
   );

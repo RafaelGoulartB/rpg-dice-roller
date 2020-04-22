@@ -9,6 +9,7 @@ import {
   MainButton,
   TextButton,
   ResultBox,
+  ResultList,
   ResultText,
   ResultBooble,
 } from '../../styles';
@@ -76,9 +77,16 @@ export default function DiceRoll() {
 
       <ResultBox style={{elevation: 3}}>
         <ResultText>Result:</ResultText>
-        {resultList.map((result, index) => (
-          <ResultBooble key={index}>{result}</ResultBooble>
-        ))}
+        <ResultList>
+          <ResultBooble>{diceResult}</ResultBooble>
+        </ResultList>
+
+        <ResultText>Result History:</ResultText>
+        <ResultList>
+          {resultList.map((result, index) => (
+            <ResultBooble key={index}>{result}</ResultBooble>
+          ))}
+        </ResultList>
       </ResultBox>
 
     </PageContainer>

@@ -51,14 +51,17 @@ export const TextButton = styled.Text`
     font-weight: bold;
 `;
 export const ResultBox = styled(ContentBox)`
+    flex-direction: column;
+    align-items: baseline;
+    flex-wrap: wrap;
+`;
+export const ResultList = styled.View`
     flex-direction: row;
-    align-items: center;
     flex-wrap: wrap;
 `;
 export const ResultText = styled.Text`
     color: ${props => props.theme.primaryText};
-    margin-right: 12px;
-    padding-right: 200px;
+    margin-bottom: 12px;
 `;
 export const ResultBooble = styled.Text`
     color: ${props => props.theme.secondaryText};

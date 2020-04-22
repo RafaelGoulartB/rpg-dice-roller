@@ -12,6 +12,7 @@ import {
   MainButton,
   TextButton,
   ResultBox,
+  ResultList,
   ResultText,
   ResultBooble,
 } from '../../styles';
@@ -38,7 +39,7 @@ export default function Number() {
     }
 
     setNumbersResult(newNumbersResults)
-    setResultList([newNumbersResults, ...resultList])
+    setResultList([...newNumbersResults, ...resultList])
   }
 
   return (
@@ -99,9 +100,18 @@ export default function Number() {
 
       <ResultBox style={{elevation: 3}}>
         <ResultText>Result:</ResultText>
-        {numbersResult.map((result, index) => (
-          <ResultBooble key={index}>{result}</ResultBooble>
-        ))}
+        <ResultList>
+          {numbersResult.map((result, index) => (
+            <ResultBooble key={index}>{result}</ResultBooble>
+          ))}
+        </ResultList>
+
+        <ResultText>Result History:</ResultText>
+        <ResultList>
+          {resultList.map((result, index) => (
+            <ResultBooble key={index}>{result}</ResultBooble>
+          ))}
+        </ResultList>
       </ResultBox>
     </PageContainer>
   );
