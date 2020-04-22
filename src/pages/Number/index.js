@@ -17,10 +17,29 @@ import {
 } from '../../styles';
 
 export default function Number() {
-  const [minNumber, setMinNumber] = useState("1");
-  const [maxNumber, setMaxNumber] = useState("10");
-  const [numResult, setNumResult] = useState("1");
-  const [repeatNum, setRepeatNum] = useState(true);
+  const [minNumber, setMinNumber] = useState('1');
+  const [maxNumber, setMaxNumber] = useState('10');
+  const [numResult, setNumResult] = useState('1');
+  const [canRepeatNum, setCanRepeatNum] = useState(true);
+
+  const [numbersResult, setNumbersResult] = useState([])
+  const [resultList, setResultList] = useState([])
+
+
+  function handleDrawNumber() {
+    let newNumbersResults = []
+
+    for (let i = 0; i < numResult; i++) {
+      const min = Math.ceil(minNumber);
+      const max = Math.floor(maxNumber) + 1;
+      const randomNumber = Math.floor(Math.random() * (max - min)) + min;
+      
+      newNumbersResults = [...newNumbersResults, randomNumber]
+    }
+
+    setNumbersResult(newNumbersResults)
+    setResultList([newNumbersResults, ...resultList])
+  }
 
   return (
     <PageContainer>
@@ -29,16 +48,18 @@ export default function Number() {
           <InputLabel>Min.</InputLabel>
           <InputField 
             value={minNumber}
+            maxLength={3}
             keyboardType='numeric'
-            onChange={num => setMinNumber(num)}
+            onChangeText={num => setMinNumber(num)}
             />
         </InputBox>
         <InputBox>
           <InputLabel>Max.</InputLabel>
           <InputField 
             value={maxNumber}
+            maxLength={3}
             keyboardType='numeric'
-            onChange={num => setMaxNumber(num)}
+            onChangeText={num => setMaxNumber(num)}
           />
         </InputBox>
         <InputBox>
@@ -47,38 +68,40 @@ export default function Number() {
             value={numResult}
             keyboardType='numeric'
             maxLength={2}
-            onChange={num => setNumResult(num)}
+            onChangeText={num => setNumResult(num)}
           />
         </InputBox>
-        <InputBox>
+        {/* Can Repeat Buttons */}
+        {/* <InputBox>
           <InputLabel>Repeat Number</InputLabel>
           <SwitchRepeat>
             <SwitchRepeatBtn 
               title="YES"
-              onPress={() => setRepeatNum(!repeatNum)}
+              onPress={() => setCanRepeatNum(!canRepeatNum)}
             >
               <SwitchRepeatText>Yes</SwitchRepeatText>
             </SwitchRepeatBtn>
             <SwitchRepeatBtn 
               title="NO"
-              onPress={() => setRepeatNum(!repeatNum)}
+              onPress={() => setCanRepeatNum(!canRepeatNum)}
             >
               <SwitchRepeatText>No</SwitchRepeatText>
             </SwitchRepeatBtn>
           </SwitchRepeat>
-        </InputBox>
+        </InputBox> */}
       </NumberContentBox>
 
-      <MainButton>
-        <TextButton>Sortear</TextButton>
+      <MainButton
+        onPress={() => handleDrawNumber()}
+      >
+        <TextButton>Draw</TextButton>
       </MainButton>
 
       <ResultBox style={{elevation: 3}}>
         <ResultText>Result:</ResultText>
-        <ResultBooble>1</ResultBooble>
-        <ResultBooble>3</ResultBooble>
-        <ResultBooble>9</ResultBooble>
-        <ResultBooble>9</ResultBooble>
+        {numbersResult.map((result, index) => (
+          <ResultBooble key={index}>{result}</ResultBooble>
+        ))}
       </ResultBox>
     </PageContainer>
   );
