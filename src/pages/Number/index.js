@@ -13,7 +13,7 @@ import {
   TextButton,
   ResultBox,
   ResultText,
-  ResulBooble,
+  ResultBooble,
 } from '../../styles';
 
 export default function Number() {
@@ -75,10 +75,10 @@ export default function Number() {
 
       <ResultBox style={{elevation: 3}}>
         <ResultText>Result:</ResultText>
-        <ResulBooble>1</ResulBooble>
-        <ResulBooble>3</ResulBooble>
-        <ResulBooble>9</ResulBooble>
-        <ResulBooble>9</ResulBooble>
+        <ResultBooble>1</ResultBooble>
+        <ResultBooble>3</ResultBooble>
+        <ResultBooble>9</ResultBooble>
+        <ResultBooble>9</ResultBooble>
       </ResultBox>
     </PageContainer>
   );
