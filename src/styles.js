@@ -20,7 +20,7 @@ export const HeaderTitle = styled.Text`
 export const SwitchTheme = styled.Switch``;
 
 // Global
-export const PageContainer = styled.View`
+export const PageContainer = styled.ScrollView`
     background-color: ${props => props.theme.background};
     height: 100%;
 `;
@@ -51,7 +51,7 @@ export const TextButton = styled.Text`
     font-weight: bold;
 `;
 export const ResultBox = styled(ContentBox)`
-    flex-direction: column;
+    margin-bottom: 24px;
     align-items: baseline;
     flex-wrap: wrap;
 `;
