@@ -9,9 +9,10 @@ import {
   ResultBox,
   ResultList,
   ResultText,
+  ClearResultButton,
+  ClearResultText,
   CoinResultBooble,
 } from '../../styles';
-import { View } from 'react-native';
 
 export default function Number() {
   const [coin, setCoin] = useState('Flip Me');
@@ -23,6 +24,11 @@ export default function Number() {
 
     setCoin(resultFlip);
     setResultList([resultFlip, ...resultList])
+  }
+
+  function handleClearResult() {
+    setCoin('Flip Me');
+    setResultList([])
   }
 
   return (
@@ -53,6 +59,15 @@ export default function Number() {
             <CoinResultBooble key={index}>{result}</CoinResultBooble>
           ))}
         </ResultList>
+        
+        { resultList.length > 0 &&
+          <ClearResultButton
+            onPress={() => handleClearResult()}
+          >
+            <ClearResultText>Clear Results</ClearResultText>
+          </ClearResultButton>
+        }
+
       </ResultBox>
     </PageContainer>
   );

@@ -15,6 +15,8 @@ import {
   ResultList,
   ResultText,
   ResultBooble,
+  ClearResultButton,
+  ClearResultText,
 } from '../../styles';
 
 export default function Number() {
@@ -40,6 +42,11 @@ export default function Number() {
 
     setNumbersResult(newNumbersResults)
     setResultList([...newNumbersResults, ...resultList])
+  }
+
+  function handleClearResult() {
+    setResultList([])
+    setNumbersResult([]);
   }
 
   return (
@@ -112,6 +119,15 @@ export default function Number() {
             <ResultBooble key={index}>{result}</ResultBooble>
           ))}
         </ResultList>
+
+        { resultList.length > 0 &&
+          <ClearResultButton
+            onPress={() => handleClearResult()}
+          >
+            <ClearResultText>Clear Results</ClearResultText>
+          </ClearResultButton>
+        }
+
       </ResultBox>
     </PageContainer>
   );

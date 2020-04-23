@@ -12,6 +12,8 @@ import {
   ResultList,
   ResultText,
   ResultBooble,
+  ClearResultButton,
+  ClearResultText,
 } from '../../styles';
 import d6Img from '../../assets/d6.png';
 import d8Img from '../../assets/d8.png';
@@ -27,7 +29,6 @@ export default function DiceRoll() {
   function handleDiceChange(image, number) {
     setDiceImg(image);
     setMaxNumber(number);
-    setResultList([])
     setDiceResult(null);
   }
 
@@ -37,6 +38,11 @@ export default function DiceRoll() {
 
     setDiceResult(diceNumber);
     setResultList([diceNumber, ...resultList]);
+  }
+
+  function handleClearResult() {
+    setResultList([])
+    setDiceResult(null);
   }
 
   return (
@@ -90,6 +96,15 @@ export default function DiceRoll() {
             <ResultBooble key={index}>{result}</ResultBooble>
           ))}
         </ResultList>
+
+        { resultList.length > 0 &&
+          <ClearResultButton
+            onPress={() => handleClearResult()}
+          >
+            <ClearResultText>Clear Results</ClearResultText>
+          </ClearResultButton>
+        }
+
       </ResultBox>
 
     </PageContainer>

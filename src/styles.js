@@ -74,6 +74,13 @@ export const ResultBooble = styled.Text`
     margin-bottom: 8px;
     line-height: 22px;
 `;
+export const ClearResultButton = styled.TouchableOpacity`
+    margin-top: 25px;
+`;
+export const ClearResultText = styled.Text`
+    color: #a4a4a4;
+`;
+
 
 // Number Page
 export const NumberContentBox = styled(ContentBox)`
