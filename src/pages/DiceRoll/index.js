@@ -21,13 +21,14 @@ import d20Img from '../../assets/d20.png';
 export default function DiceRoll() {
   const [diceImg, setDiceImg] = useState(d6Img);
   const [maxNumber, setMaxNumber] = useState(6);
-  const [diceResult, setDiceResult] = useState(1);
+  const [diceResult, setDiceResult] = useState(null);
   const [resultList, setResultList] = useState([]);
 
   function handleDiceChange(image, number) {
     setDiceImg(image);
     setMaxNumber(number);
     setResultList([])
+    setDiceResult(null);
   }
 
   function handleDiceRoll() {
@@ -77,9 +78,11 @@ export default function DiceRoll() {
 
       <ResultBox style={{elevation: 3}}>
         <ResultText>Result:</ResultText>
-        <ResultList>
-          <ResultBooble>{diceResult}</ResultBooble>
-        </ResultList>
+        {diceResult &&
+          <ResultList>
+            <ResultBooble>{diceResult}</ResultBooble>
+          </ResultList>
+        }
 
         <ResultText>Result History:</ResultText>
         <ResultList>

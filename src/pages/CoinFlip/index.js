@@ -41,9 +41,11 @@ export default function Number() {
 
       <ResultBox style={{elevation: 3}}>
         <ResultText>Result:</ResultText>
-        <ResultList>
-          <CoinResultBooble>{coin}</CoinResultBooble>
-        </ResultList>
+        { coin !== 'Flip Me' &&
+          <ResultList>
+            <CoinResultBooble>{coin}</CoinResultBooble>
+          </ResultList>
+        }
 
         <ResultText>Result History:</ResultText>
         <ResultList>
