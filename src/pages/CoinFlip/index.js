@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import {
   PageContainer,
   CoinContentBox,
@@ -13,12 +13,18 @@ import {
   ClearResultText,
   CoinResultBooble,
 } from '../../styles';
+import * as Animatable from 'react-native-animatable';
 
-export default function Number() {
+export default function CoinFlip() {
   const [coin, setCoin] = useState('Flip Me');
   const [resultList, setResultList] = useState([]);
+  const CoinRef = useRef();
+  const ResultBoobleRef = useRef();
 
   function handleFlip() {
+    ResultBoobleRef.current.bounceIn();
+    CoinRef.current.bounceIn();
+
     const randomNumber = Math.round(Math.random() * Math.floor(1));
     const resultFlip = randomNumber ? 'Tails' : 'Heads';
 
@@ -34,9 +40,11 @@ export default function Number() {
   return (
     <PageContainer>
       <CoinContentBox style={{elevation: 3}}>
-        <CoinBox>
-          <CoinText>{coin}</CoinText>
-        </CoinBox>
+        <Animatable.View ref={CoinRef}>
+          <CoinBox >
+            <CoinText>{coin}</CoinText>
+          </CoinBox>
+        </Animatable.View>
       </CoinContentBox>
 
       <MainButton
@@ -47,11 +55,16 @@ export default function Number() {
 
       <ResultBox style={{elevation: 3}}>
         <ResultText>Result:</ResultText>
-        { coin !== 'Flip Me' &&
-          <ResultList>
-            <CoinResultBooble>{coin}</CoinResultBooble>
-          </ResultList>
-        }
+        <Animatable.View 
+            animation="bounceIn" easing="ease-out" iterationCount={1}
+            ref={ResultBoobleRef}
+        >
+          { coin !== 'Flip Me' &&
+            <ResultList>
+              <CoinResultBooble>{coin}</CoinResultBooble>
+            </ResultList>
+          }
+        </Animatable.View>
 
         <ResultText>Result History:</ResultText>
         <ResultList>
