@@ -31,6 +31,7 @@ export default function Routes() {
       />
       <NavigationContainer>
         <Tab.Navigator
+          initialRouteName="Dice"
           activeColor="#fff"
           inactiveColor="#b0b0b0"
           barStyle={{ backgroundColor: dark ? '#1d1d1d':'#6200ee' }}
