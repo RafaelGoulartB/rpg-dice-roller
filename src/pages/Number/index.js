@@ -5,9 +5,6 @@ import {
   InputBox,
   InputLabel,
   InputField,
-  SwitchRepeat,
-  SwitchRepeatBtn,
-  SwitchRepeatText,
   MainButton,
   TextButton,
   ResultBox,
@@ -24,13 +21,11 @@ export default function Number() {
   const [minNumber, setMinNumber] = useState('1');
   const [maxNumber, setMaxNumber] = useState('10');
   const [numResult, setNumResult] = useState('1');
-  const [canRepeatNum, setCanRepeatNum] = useState(true);
 
   const [numbersResult, setNumbersResult] = useState([])
   const [resultList, setResultList] = useState([])
 
   const ResultBoobleRef = useRef();
-
 
   function handleDrawNumber() {
     ResultBoobleRef.current.bounceIn();
@@ -84,24 +79,6 @@ export default function Number() {
             onChangeText={num => setNumResult(num)}
           />
         </InputBox>
-        {/* Can Repeat Buttons */}
-        {/* <InputBox>
-          <InputLabel>Repeat Number</InputLabel>
-          <SwitchRepeat>
-            <SwitchRepeatBtn 
-              title="YES"
-              onPress={() => setCanRepeatNum(!canRepeatNum)}
-            >
-              <SwitchRepeatText>Yes</SwitchRepeatText>
-            </SwitchRepeatBtn>
-            <SwitchRepeatBtn 
-              title="NO"
-              onPress={() => setCanRepeatNum(!canRepeatNum)}
-            >
-              <SwitchRepeatText>No</SwitchRepeatText>
-            </SwitchRepeatBtn>
-          </SwitchRepeat>
-        </InputBox> */}
       </NumberContentBox>
 
       <MainButton
