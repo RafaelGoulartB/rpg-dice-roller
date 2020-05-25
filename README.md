@@ -38,19 +38,19 @@ This project was made using the follow technologies:
   <img src="https://github.com/RafaelGoulartB/RandomNumberApp/blob/master/screenshots/coin-flip-light.png">
 </div>
 
-## Install
+## How to run
+Para rodar o projeto é necessario um celular com o aplicativo do [expo](https://play.google.com/store/apps/details?id=host.exp.exponent) instalado ou um emulador android/ios.
 
 ```sh
 git clone https://github.com/RafaelGoulartB/RandomNumberApp.git
+
 cd RandomNumberApp/
+
 npm install
+
+npm start
 ```
 
-## Usage
-
-```sh
-npm run start
-```
 
 ## Author
 
