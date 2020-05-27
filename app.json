@@ -7,10 +7,6 @@
       "android",
       "web"
     ],
-    "android": {
-      "package": "com.rafagoulartb.randomApp",
-      "versionCode": 1
-    },
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -25,6 +21,11 @@
     "assetBundlePatterns": [
       "**/*"
     ],
+    "android": {
+      "package": "com.rafagoulartb.randomApp",
+      "versionCode": 1,
+      "googleMobileAdsAppId": "ca-app-pub-3940256099942544~3347511713"
+    },
     "ios": {
       "supportsTablet": true
     }
