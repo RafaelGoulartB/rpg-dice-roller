@@ -50,6 +50,7 @@ npm install
 
 npm start
 ```
+Depois leia o codigo QRCode com o app do [expo](https://play.google.com/store/apps/details?id=host.exp.exponent) ou rode no emulator.
 
 
 ## Author
