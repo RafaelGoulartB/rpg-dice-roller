@@ -51,7 +51,7 @@ export const TextButton = styled.Text`
     font-weight: bold;
 `;
 export const ResultBox = styled(ContentBox)`
-    margin-bottom: 24px;
+    margin-bottom: 12px;
     align-items: baseline;
     flex-wrap: wrap;
 `;

@@ -24,7 +24,9 @@
     "android": {
       "package": "com.rafagoulartb.randomApp",
       "versionCode": 1,
-      "googleMobileAdsAppId": "ca-app-pub-3940256099942544~3347511713"
+      "config": {
+        "googleMobileAdsAppId": "ca-app-pub-3940256099942544~3347511713"
+      }
     },
     "ios": {
       "supportsTablet": true

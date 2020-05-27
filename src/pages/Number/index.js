@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import {
   PageContainer,
   NumberContentBox,
@@ -15,7 +15,8 @@ import {
   ClearResultText,
 } from '../../styles';
 import * as Animatable from 'react-native-animatable';
-
+import { AdMobBanner, AdMobInterstitial } from 'expo-ads-admob'
+import env from '../../../.env-exemple.json'
 
 export default function Number() {
   const [minNumber, setMinNumber] = useState('1');
@@ -26,6 +27,18 @@ export default function Number() {
   const [resultList, setResultList] = useState([])
 
   const ResultBoobleRef = useRef();
+
+  // useEffect(() => {
+  //   if(resultList.length == 10 || resultList.length == 30) {
+  //     openInterstitialAd()
+  //   }
+  // }, [resultList])
+
+  async function openInterstitialAd() {
+    await AdMobInterstitial.setAdUnitID(env.ads.page.number["ad-interstitial-id"]);
+    await AdMobInterstitial.requestAdAsync({ servePersonalizedAds: true});
+    await AdMobInterstitial.showAdAsync();
+  }
 
   function handleDrawNumber() {
     ResultBoobleRef.current.bounceIn();
@@ -51,6 +64,12 @@ export default function Number() {
 
   return (
     <PageContainer>
+      {/* <AdMobBanner
+        bannerSize="largeBanner"
+        adUnitID={env.ads.page.number["ad-banner-id"]}
+        servePersonalizedAds
+        style={{marginTop: 12, alignSelf: "center"}}
+      />  */}
       <NumberContentBox style={{elevation: 3}}>
         <InputBox>
           <InputLabel>Min.</InputLabel>
@@ -115,6 +134,13 @@ export default function Number() {
         }
 
       </ResultBox>
+
+      {/* <AdMobBanner
+        bannerSize="banner"
+        adUnitID={env.ads.page.number["ad-banner-id"]}
+        // servePersonalizedAds
+        style={{marginBottom: 12, alignSelf: "center"}}
+      />  */}
     </PageContainer>
   );
 }

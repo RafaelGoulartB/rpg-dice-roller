@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Image } from 'react-native';
 import {
   PageContainer,
@@ -16,6 +16,8 @@ import {
   ClearResultText,
 } from '../../styles';
 import * as Animatable from 'react-native-animatable';
+import { AdMobBanner, AdMobInterstitial } from 'expo-ads-admob'
+import env from '../../../.env-exemple.json'
 
 import d6Img from '../../assets/d6.png';
 import d8Img from '../../assets/d8.png';
@@ -29,6 +31,18 @@ export default function DiceRoll() {
   const [resultList, setResultList] = useState([]);
   const ResultBoobleRef = useRef();
   const DiceImgRef = useRef();
+
+  // useEffect(() => {
+  //   if(resultList.length == 10 || resultList.length == 30) {
+  //     openInterstitialAd()
+  //   }
+  // }, [resultList])
+
+  async function openInterstitialAd() {
+    await AdMobInterstitial.setAdUnitID(env.ads.page.dice["ad-interstitial-id"]);
+    await AdMobInterstitial.requestAdAsync({ servePersonalizedAds: true});
+    await AdMobInterstitial.showAdAsync();
+  }
 
   function handleDiceChange(image, number) {
     DiceImgRef.current.bounceIn();
@@ -54,6 +68,13 @@ export default function DiceRoll() {
 
   return (
     <PageContainer>
+      {/* <AdMobBanner
+        bannerSize="largeBanner"
+        adUnitID={env.ads.page.dice["ad-banner-id"]}
+        // servePersonalizedAds
+        style={{marginTop: 12, alignSelf: "center"}}
+      /> */}
+
       <DiceContextBox style={{elevation: 3}}>
         <Animatable.Image 
           source={diceImg}
@@ -123,6 +144,12 @@ export default function DiceRoll() {
 
       </ResultBox>
 
+      {/* <AdMobBanner
+        bannerSize="banner"
+        adUnitID={env.ads.page.dice["ad-banner-id"]}
+        servePersonalizedAds
+        style={{marginBottom: 12, alignSelf: "center"}}
+      />  */}
     </PageContainer>
   );
 }
