@@ -14,6 +14,8 @@
 
 > React-Native - A Random Number Generator / Dice Roller /  Coin Flip App with dark and light theme
 
+Download the app at: https://play.google.com/store/apps/details?id=com.rafagoulartb.randomapp
+
 ## 💻 Technologies
 This project was made using the follow technologies:
 <ul>
