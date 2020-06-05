@@ -69,13 +69,6 @@ npm start
 Depois leia o codigo QRCode com o app do [expo](https://play.google.com/store/apps/details?id=host.exp.exponent) ou rode no emulator.
 
 
-# Author
-
-👤 **Rafael GoulartB**
-
-* Github: [@RafaelGoulartB](https://github.com/RafaelGoulartB)
-
-
 # :bug: Issues
 
 Feel free to **file a new issue** with a respective title and description on the the [RandomApp](https://github.com/RafaelGoulartB/RandomApp/issues) repository. If you already found a solution to your problem, **i would love to review your pull request**!
