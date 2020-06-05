@@ -1,4 +1,7 @@
-<h1 align="center">Random Number App</h1>
+<p align="center">
+   <img src="https://github.com/RafaelGoulartB/RandomApp/blob/master/assets/icon.png" width="150"/>
+</p>
+<h1 align="center">RandomApp - Dice | Number | Coin</h1>
 <p>
   <img src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
   <a href="https://github.com/RafaelGoulartB/RandomNumberApp#readme">
@@ -20,7 +23,7 @@ Download the app at: https://play.google.com/store/apps/details?id=com.rafagoula
 
 * [Technologies](#computer-technologies)
 * [Features](#rocket-features)
-* [How to Run](#how-to-run)
+* [How to Run](#construction_worker-how-to-run)
 * [Found a bug? Missing a specific feature?](#bug-issues)
 * [License](#closed_book-license)
 
@@ -54,7 +57,7 @@ This project was made using the follow technologies:
 * Random Number Generator
 * Coin Fliper
 
-# How to run
+# :construction_worker: How to run
 Para rodar o projeto é necessario um celular com o aplicativo do [expo](https://play.google.com/store/apps/details?id=host.exp.exponent) instalado ou um emulador android/ios.
 
 ```sh
