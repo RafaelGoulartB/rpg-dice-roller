@@ -27,16 +27,6 @@ Download the app at: https://play.google.com/store/apps/details?id=com.rafagoula
 * [Found a bug? Missing a specific feature?](#bug-issues)
 * [License](#closed_book-license)
 
-# :computer: Technologies
-This project was made using the follow technologies:
-<ul>
-  <li><a href="https://reactnative.dev/">React Native</a></li>
-  <li><a href="https://styled-components.com/">Styled Compoments</a></li>
-  <li><a href="https://redux.js.org/introduction/getting-started">Redux</a></li>
-  <li><a href="https://expo.io/">Expo</a></li>
-  <li><a href="https://eslint.org/">Eslint</a></li>
-</ul>
-
 ### Dark theme
 <div style="display: flex; flex-direction: "row";">
   <img src="https://github.com/RafaelGoulartB/RandomNumberApp/blob/master/screenshots/number-dark.png">
@@ -50,6 +40,16 @@ This project was made using the follow technologies:
   <img src="https://github.com/RafaelGoulartB/RandomNumberApp/blob/master/screenshots/dice-roll-light.png">
   <img src="https://github.com/RafaelGoulartB/RandomNumberApp/blob/master/screenshots/coin-flip-light.png">
 </div>
+
+# :computer: Technologies
+This project was made using the follow technologies:
+<ul>
+  <li><a href="https://reactnative.dev/">React Native</a></li>
+  <li><a href="https://styled-components.com/">Styled Compoments</a></li>
+  <li><a href="https://redux.js.org/introduction/getting-started">Redux</a></li>
+  <li><a href="https://expo.io/">Expo</a></li>
+  <li><a href="https://eslint.org/">Eslint</a></li>
+</ul>
 
 # :rocket: Features
 
