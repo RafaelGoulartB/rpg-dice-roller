@@ -16,7 +16,15 @@
 
 Download the app at: https://play.google.com/store/apps/details?id=com.rafagoulartb.randomapp
 
-## 💻 Technologies
+# :pushpin: Table of Contents
+
+* [Technologies](#computer-technologies)
+* [Features](#rocket-features)
+* [How to Run](#how-to-run)
+* [Found a bug? Missing a specific feature?](#bug-issues)
+* [License](#closed_book-license)
+
+# :computer: Technologies
 This project was made using the follow technologies:
 <ul>
   <li><a href="https://reactnative.dev/">React Native</a></li>
@@ -40,7 +48,13 @@ This project was made using the follow technologies:
   <img src="https://github.com/RafaelGoulartB/RandomNumberApp/blob/master/screenshots/coin-flip-light.png">
 </div>
 
-## How to run
+# :rocket: Features
+
+* Dice Roller with 6, 8, 12, 20 sides dice
+* Random Number Generator
+* Coin Fliper
+
+# How to run
 Para rodar o projeto é necessario um celular com o aplicativo do [expo](https://play.google.com/store/apps/details?id=host.exp.exponent) instalado ou um emulador android/ios.
 
 ```sh
@@ -55,23 +69,23 @@ npm start
 Depois leia o codigo QRCode com o app do [expo](https://play.google.com/store/apps/details?id=host.exp.exponent) ou rode no emulator.
 
 
-## Author
+# Author
 
 👤 **Rafael GoulartB**
 
 * Github: [@RafaelGoulartB](https://github.com/RafaelGoulartB)
 
 
+# :bug: Issues
 
-## 🤝 Contributing
+Feel free to **file a new issue** with a respective title and description on the the [RandomApp](https://github.com/RafaelGoulartB/RandomApp/issues) repository. If you already found a solution to your problem, **i would love to review your pull request**!
 
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/RafaelGoulartB/RandomNumberApp/issues).
+# :closed_book: License
 
-## Show your support
+Released in 2020 :closed_book: License
+
+Made with love by [Rafael Goulart](https://github.com/RandomApp) 🚀.
+This project is under the [MIT license](https://github.com/RafaelGoulartB/RandomApp/master/LICENSE).
+
 
 Give a ⭐️ if this project helped you!
-
-## 📝 License
-
-Copyright © 2019 [Rafael GoulartB](https://github.com/RafaelGoulartB).<br />
-This project is [MIT](https://github.com/RafaelGoulartB/RandomNumberApp/blob/master/LICENSE) licensed.
