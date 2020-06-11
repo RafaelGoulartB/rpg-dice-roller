@@ -46,7 +46,6 @@ This project was made using the follow technologies:
 <ul>
   <li><a href="https://reactnative.dev/">React Native</a></li>
   <li><a href="https://styled-components.com/">Styled Compoments</a></li>
-  <li><a href="https://redux.js.org/introduction/getting-started">Redux</a></li>
   <li><a href="https://expo.io/">Expo</a></li>
   <li><a href="https://eslint.org/">Eslint</a></li>
 </ul>
