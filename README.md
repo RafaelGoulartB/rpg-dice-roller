@@ -57,18 +57,16 @@ This project was made using the follow technologies:
 * Coin Fliper
 
 # :construction_worker: How to run
-Para rodar o projeto é necessario um celular com o aplicativo do [expo](https://play.google.com/store/apps/details?id=host.exp.exponent) instalado ou um emulador android/ios.
+To run the project you need a cellphone with the app of [expo](https://play.google.com/store/apps/details?id=host.exp.exponent) instaled or a emulator android/ios.
+<br />
+After, fork this repository and clone to your machine. Inside of the project's folder run the following commands:
 
 ```sh
-git clone https://github.com/RafaelGoulartB/RandomNumberApp.git
-
-cd RandomNumberApp/
-
 npm install
 
 npm start
 ```
-Depois leia o codigo QRCode com o app do [expo](https://play.google.com/store/apps/details?id=host.exp.exponent) ou rode no emulator.
+Aferter read the QRCode with the app of [expo](https://play.google.com/store/apps/details?id=host.exp.exponent) or run on emulator.
 
 
 # :bug: Issues
