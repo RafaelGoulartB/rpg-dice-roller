@@ -28,11 +28,11 @@ export default function Number() {
 
   const ResultBoobleRef = useRef();
 
-  // useEffect(() => {
-  //   if(resultList.length == 10 || resultList.length == 30) {
-  //     openInterstitialAd()
-  //   }
-  // }, [resultList])
+  useEffect(() => {
+    if (resultList.length == 8 || resultList.length == 30) {
+      openInterstitialAd();
+    }
+  }, [resultList]);
 
   async function openInterstitialAd() {
     await AdMobInterstitial.setAdUnitID(
@@ -66,12 +66,13 @@ export default function Number() {
 
   return (
     <PageContainer>
-      {/* <AdMobBanner
+      <AdMobBanner
         bannerSize="largeBanner"
         adUnitID={env.ads.page.number["ad-banner-id"]}
         servePersonalizedAds
-        style={{marginTop: 12, alignSelf: "center"}}
-      />  */}
+        style={{ marginTop: 12, alignSelf: "center" }}
+      />
+
       <NumberContentBox style={{ elevation: 3 }}>
         <InputBox>
           <InputLabel>Min.</InputLabel>
@@ -116,7 +117,7 @@ export default function Number() {
           </ResultList>
         </Animatable.View>
 
-        <ResultText>Result History:</ResultText>
+        {resultList.length > 0 && <ResultText>Result History:</ResultText>}
         <ResultList>
           {resultList.map((result, index) => (
             <ResultBooble key={index}>{result}</ResultBooble>
@@ -129,13 +130,6 @@ export default function Number() {
           </ClearResultButton>
         )}
       </ResultBox>
-
-      {/* <AdMobBanner
-        bannerSize="banner"
-        adUnitID={env.ads.page.number["ad-banner-id"]}
-        // servePersonalizedAds
-        style={{marginBottom: 12, alignSelf: "center"}}
-      />  */}
     </PageContainer>
   );
 }

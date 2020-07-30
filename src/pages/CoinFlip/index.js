@@ -23,11 +23,11 @@ export default function CoinFlip() {
   const CoinRef = useRef();
   const ResultBoobleRef = useRef();
 
-  // useEffect(() => {
-  //   if(resultList.length == 5 || resultList.length == 20) {
-  //     openInterstitialAd()
-  //   }
-  // }, [resultList])
+  useEffect(() => {
+    if (resultList.length == 6 || resultList.length == 20) {
+      openInterstitialAd();
+    }
+  }, [resultList]);
 
   async function openInterstitialAd() {
     await AdMobInterstitial.setAdUnitID(
@@ -55,12 +55,12 @@ export default function CoinFlip() {
 
   return (
     <PageContainer>
-      {/* <AdMobBanner
+      <AdMobBanner
         bannerSize="largeBanner"
         adUnitID={env.ads.page.coin["ad-banner-id"]}
         servePersonalizedAds
-        style={{marginTop: 12, alignSelf: "center"}}
-      /> */}
+        style={{ marginTop: 12, alignSelf: "center" }}
+      />
 
       <CoinContentBox style={{ elevation: 3 }}>
         <Animatable.View ref={CoinRef}>
@@ -89,7 +89,7 @@ export default function CoinFlip() {
           )}
         </Animatable.View>
 
-        <ResultText>Result History:</ResultText>
+        {resultList.length > 0 && <ResultText>Result History:</ResultText>}
         <ResultList>
           {resultList.map((result, index) => (
             <CoinResultBooble key={index}>{result}</CoinResultBooble>
@@ -102,13 +102,6 @@ export default function CoinFlip() {
           </ClearResultButton>
         )}
       </ResultBox>
-
-      {/* <AdMobBanner
-        bannerSize="banner"
-        adUnitID={env.ads.page.coin["ad-banner-id"]}
-        // servePersonalizedAds
-        style={{marginBottom: 12, alignSelf: "center"}}
-      />  */}
     </PageContainer>
   );
 }
