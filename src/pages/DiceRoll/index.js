@@ -1,5 +1,5 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { Image } from 'react-native';
+import React, { useState, useRef, useEffect } from "react";
+import { Image } from "react-native";
 import {
   PageContainer,
   DiceContextBox,
@@ -14,15 +14,15 @@ import {
   ResultBooble,
   ClearResultButton,
   ClearResultText,
-} from '../../styles';
-import * as Animatable from 'react-native-animatable';
-import { AdMobBanner, AdMobInterstitial } from 'expo-ads-admob'
-import env from '../../../.env-exemple.json'
+} from "../../styles";
+import * as Animatable from "react-native-animatable";
+import { AdMobBanner, AdMobInterstitial } from "expo-ads-admob";
+import env from "../../../.env-exemple.json";
 
-import d6Img from '../../assets/d6.png';
-import d8Img from '../../assets/d8.png';
-import d12Img from '../../assets/d12.png';
-import d20Img from '../../assets/d20.png';
+import d6Img from "../../assets/d6.png";
+import d8Img from "../../assets/d8.png";
+import d12Img from "../../assets/d12.png";
+import d20Img from "../../assets/d20.png";
 
 export default function DiceRoll() {
   const [diceImg, setDiceImg] = useState(d6Img);
@@ -39,8 +39,10 @@ export default function DiceRoll() {
   // }, [resultList])
 
   async function openInterstitialAd() {
-    await AdMobInterstitial.setAdUnitID(env.ads.page.dice["ad-interstitial-id"]);
-    await AdMobInterstitial.requestAdAsync({ servePersonalizedAds: true});
+    await AdMobInterstitial.setAdUnitID(
+      env.ads.page.dice["ad-interstitial-id"]
+    );
+    await AdMobInterstitial.requestAdAsync({ servePersonalizedAds: true });
     await AdMobInterstitial.showAdAsync();
   }
 
@@ -55,7 +57,7 @@ export default function DiceRoll() {
     ResultBoobleRef.current.bounceIn();
     DiceImgRef.current.bounceIn();
     const randomNumber = Math.floor(Math.random() * Math.floor(maxNumber));
-    const diceNumber = randomNumber+1;
+    const diceNumber = randomNumber + 1;
 
     setDiceResult(diceNumber);
     setResultList([diceNumber, ...resultList]);
@@ -75,57 +77,51 @@ export default function DiceRoll() {
         style={{marginTop: 12, alignSelf: "center"}}
       /> */}
 
-      <DiceContextBox style={{elevation: 3}}>
-        <Animatable.Image 
+      <DiceContextBox style={{ elevation: 3 }}>
+        <Animatable.Image
           source={diceImg}
-          animation="bounceIn" easing="ease-out" iterationCount={1}
+          animation="bounceIn"
+          easing="ease-out"
+          iterationCount={1}
           ref={DiceImgRef}
         />
         <SwitchDice>
-          <SwitchDiceButton
-            onPress={() => handleDiceChange(d6Img, 6)}
-          >
+          <SwitchDiceButton onPress={() => handleDiceChange(d6Img, 6)}>
             <SwitchDiceButtonText>d6</SwitchDiceButtonText>
           </SwitchDiceButton>
 
-          <SwitchDiceButton
-            onPress={() => handleDiceChange(d8Img, 8)}
-          >
+          <SwitchDiceButton onPress={() => handleDiceChange(d8Img, 8)}>
             <SwitchDiceButtonText>d8</SwitchDiceButtonText>
           </SwitchDiceButton>
 
-          <SwitchDiceButton
-            onPress={() => handleDiceChange(d12Img, 12)}
-          >
+          <SwitchDiceButton onPress={() => handleDiceChange(d12Img, 12)}>
             <SwitchDiceButtonText>d12</SwitchDiceButtonText>
           </SwitchDiceButton>
 
-          <SwitchDiceButton
-            onPress={() => handleDiceChange(d20Img, 20)}
-          >
+          <SwitchDiceButton onPress={() => handleDiceChange(d20Img, 20)}>
             <SwitchDiceButtonText>d20</SwitchDiceButtonText>
           </SwitchDiceButton>
         </SwitchDice>
       </DiceContextBox>
 
-      <MainButton
-        onPress={() => handleDiceRoll()}
-      >
+      <MainButton onPress={() => handleDiceRoll()}>
         <TextButton>Roll</TextButton>
       </MainButton>
 
-      <ResultBox style={{elevation: 3}}>
+      <ResultBox style={{ elevation: 3 }}>
         <ResultText>Result:</ResultText>
-          <Animatable.View 
-            animation="bounceIn" easing="ease-out" iterationCount={1}
-            ref={ResultBoobleRef}
-            >
-            {diceResult &&
-              <ResultList>
-                <ResultBooble>{diceResult}</ResultBooble>
-              </ResultList>
-            }
-          </Animatable.View>
+        <Animatable.View
+          animation="bounceIn"
+          easing="ease-out"
+          iterationCount={1}
+          ref={ResultBoobleRef}
+        >
+          {diceResult && (
+            <ResultList>
+              <ResultBooble>{diceResult}</ResultBooble>
+            </ResultList>
+          )}
+        </Animatable.View>
 
         <ResultText>Result History:</ResultText>
         <ResultList>
@@ -134,14 +130,11 @@ export default function DiceRoll() {
           ))}
         </ResultList>
 
-        { resultList.length > 0 &&
-          <ClearResultButton
-            onPress={() => handleClearResult()}
-          >
+        {resultList.length > 0 && (
+          <ClearResultButton onPress={() => handleClearResult()}>
             <ClearResultText>Clear Results</ClearResultText>
           </ClearResultButton>
-        }
-
+        )}
       </ResultBox>
 
       {/* <AdMobBanner
