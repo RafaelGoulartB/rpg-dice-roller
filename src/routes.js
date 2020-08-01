@@ -23,7 +23,6 @@ export default function Routes() {
   useEffect(() => {
     async function fetchTheme() {
       const theme = await AsyncStorage.getItem("@random:theme");
-      console.log(theme);
       if (theme == "true") {
         setDark(true);
       } else if (theme == "false" || theme == null || theme == undefined) {
