@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import styled, { ThemeProvider } from "styled-components";
 import Icon from "react-native-vector-icons/FontAwesome5";
+import AsyncStorage from "@react-native-community/async-storage";
 
 import Header from "./components/Header";
 import lightTheme from "./themes/light";
@@ -19,11 +20,30 @@ const Tab = createMaterialBottomTabNavigator();
 export default function Routes() {
   const [dark, setDark] = useState(false);
 
+  useEffect(() => {
+    async function fetchTheme() {
+      const theme = await AsyncStorage.getItem("@random:theme");
+      console.log(theme);
+      if (theme == "true") {
+        setDark(true);
+      } else if (theme == "false" || theme == null || theme == undefined) {
+        setDark(false);
+      }
+    }
+    fetchTheme();
+  }, []);
+
   return (
     <ThemeProvider theme={dark ? darkTheme : lightTheme}>
       <Header
         pageTitle="Random Number Generator"
-        onDarkModeChange={() => setDark(!dark)}
+        onDarkModeChange={async () => {
+          // Persistent theme
+          if (!dark) await AsyncStorage.setItem("@random:theme", "true");
+          else await AsyncStorage.setItem("@random:theme", "false");
+
+          setDark(!dark);
+        }}
         darkModeValue={dark}
       />
       <NavigationContainer>
