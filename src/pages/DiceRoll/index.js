@@ -33,7 +33,7 @@ export default function DiceRoll() {
   const DiceImgRef = useRef();
 
   useEffect(() => {
-    if (resultList.length == 10 || 30) {
+    if (resultList.length == 10 || resultList.length == 30) {
       openInterstitialAd();
     }
   }, [resultList]);

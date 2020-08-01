@@ -29,7 +29,7 @@ export default function Number() {
   const ResultBoobleRef = useRef();
 
   useEffect(() => {
-    if (resultList.length == 10 || 30) {
+    if (resultList.length == 10 || resultList.length == 30) {
       openInterstitialAd();
     }
   }, [resultList]);
