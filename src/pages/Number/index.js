@@ -16,7 +16,7 @@ import {
 } from "../../styles";
 import * as Animatable from "react-native-animatable";
 import { AdMobBanner, AdMobInterstitial } from "expo-ads-admob";
-import env from "../../../.env-exemple.json";
+import env from "../../../.env.json";
 
 export default function Number() {
   const [minNumber, setMinNumber] = useState("1");
@@ -29,7 +29,7 @@ export default function Number() {
   const ResultBoobleRef = useRef();
 
   useEffect(() => {
-    if (resultList.length == 8 || resultList.length == 30) {
+    if (resultList.length == 10 || 30) {
       openInterstitialAd();
     }
   }, [resultList]);

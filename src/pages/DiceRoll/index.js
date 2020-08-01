@@ -17,7 +17,7 @@ import {
 } from "../../styles";
 import * as Animatable from "react-native-animatable";
 import { AdMobBanner, AdMobInterstitial } from "expo-ads-admob";
-import env from "../../../.env-exemple.json";
+import env from "../../../.env.json";
 
 import d6Img from "../../assets/d6.png";
 import d8Img from "../../assets/d8.png";
@@ -33,7 +33,7 @@ export default function DiceRoll() {
   const DiceImgRef = useRef();
 
   useEffect(() => {
-    if (resultList.length == 8 || resultList.length == 30) {
+    if (resultList.length == 10 || 30) {
       openInterstitialAd();
     }
   }, [resultList]);

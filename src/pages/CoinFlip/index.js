@@ -15,7 +15,7 @@ import {
 } from "../../styles";
 import * as Animatable from "react-native-animatable";
 import { AdMobBanner, AdMobInterstitial } from "expo-ads-admob";
-import env from "../../../.env-exemple.json";
+import env from "../../../.env.json";
 
 export default function CoinFlip() {
   const [coin, setCoin] = useState("Flip Me");
@@ -24,7 +24,7 @@ export default function CoinFlip() {
   const ResultBoobleRef = useRef();
 
   useEffect(() => {
-    if (resultList.length == 6 || resultList.length == 20) {
+    if (resultList.length == 10 || 30) {
       openInterstitialAd();
     }
   }, [resultList]);
