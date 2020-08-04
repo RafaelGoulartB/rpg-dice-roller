@@ -23,10 +23,6 @@
 
 <h1 align="center">Random - Dice | Number | Coin</h1>
 
-<p align="center">	
-   React-Native - A Random Number Generator / Dice Roller /  Coin Flip App with dark and light theme
-<p>
-
 # :pushpin: Table of Contents
 
 * [Technologies](#computer-technologies)
