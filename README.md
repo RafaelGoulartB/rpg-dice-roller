@@ -1,8 +1,7 @@
 <p align="center">
    <img src="https://github.com/RafaelGoulartB/RandomApp/blob/master/assets/icon.png" width="150"/>
 </p>
-<h1 align="center">RandomApp - Dice | Number | Coin</h1>
-   
+  
 <p align="center">	
    <a href="https://www.linkedin.com/in/rafael-goulartb/">
       <img alt="Rafael Goulart" src="https://img.shields.io/badge/-RafaelGoulartB-6200ee?style=flat&logo=Linkedin&logoColor=white" />
@@ -22,9 +21,11 @@
    </a>
 </p>
 
-> React-Native - A Random Number Generator / Dice Roller /  Coin Flip App with dark and light theme
+<h1 align="center">Random - Dice | Number | Coin</h1>
 
-Download the app at: https://play.google.com/store/apps/details?id=com.rafagoulartb.randomapp
+<p align="center">	
+   React-Native - A Random Number Generator / Dice Roller /  Coin Flip App with dark and light theme
+<p>
 
 # :pushpin: Table of Contents
 
