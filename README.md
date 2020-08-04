@@ -1,7 +1,9 @@
 <p align="center">
    <img src="https://github.com/RafaelGoulartB/RandomApp/blob/master/assets/icon.png" width="150"/>
 </p>
-  
+ 
+<h1 align="center">Random - Dice | Number | Coin</h1>
+
 <p align="center">	
    <a href="https://www.linkedin.com/in/rafael-goulartb/">
       <img alt="Rafael Goulart" src="https://img.shields.io/badge/-RafaelGoulartB-6200ee?style=flat&logo=Linkedin&logoColor=white" />
@@ -20,8 +22,6 @@
       <img alt="Stargazers" src="https://img.shields.io/github/stars/RafaelGoulartB/RandomGeneratorApp?color=6200ee&logo=github">
    </a>
 </p>
-
-<h1 align="center">Random - Dice | Number | Coin</h1>
 
 # :pushpin: Table of Contents
 
