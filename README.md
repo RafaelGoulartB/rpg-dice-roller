@@ -2,17 +2,24 @@
    <img src="https://github.com/RafaelGoulartB/RandomApp/blob/master/assets/icon.png" width="150"/>
 </p>
 <h1 align="center">RandomApp - Dice | Number | Coin</h1>
-<p>
-  <img src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
+   
+<p align="center">	
+   <a href="https://www.linkedin.com/in/rafael-goulartb/">
+      <img alt="Rafael Goulart" src="https://img.shields.io/badge/-RafaelGoulartB-6200ee?style=flat&logo=Linkedin&logoColor=white" />
+   </a>
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/RafaelGoulartB/RandomGeneratorApp?color=6200ee">
+
+  <img src="https://img.shields.io/badge/version-1.0.0-6200ee.svg?cacheSeconds=2592000" />
   <a href="https://github.com/RafaelGoulartB/RandomNumberApp#readme">
-    <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" target="_blank" />
+    <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-6200ee.svg" target="_blank" />
   </a>
-  <a href="https://github.com/RafaelGoulartB/RandomNumberApp/graphs/commit-activity">
-    <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" target="_blank" />
-  </a>
-  <a href="https://github.com/RafaelGoulartB/RandomNumberApp/blob/master/LICENSE">
-    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" target="_blank" />
-  </a>
+   <a href="https://github.com/RafaelGoulartB/proffy/commits/master">
+      <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/RafaelGoulartB/RandomGeneratorApp?color=6200ee">
+  </a> 
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-6200ee">
+   <a href="https://github.com/RafaelGoulartB/RandomGeneratorApp/stargazers">
+      <img alt="Stargazers" src="https://img.shields.io/github/stars/RafaelGoulartB/RandomGeneratorApp?color=6200ee&logo=github">
+   </a>
 </p>
 
 > React-Native - A Random Number Generator / Dice Roller /  Coin Flip App with dark and light theme
