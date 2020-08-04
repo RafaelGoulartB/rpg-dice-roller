@@ -32,6 +32,7 @@ Download the app at: https://play.google.com/store/apps/details?id=com.rafagoula
 * [Features](#rocket-features)
 * [How to Run](#construction_worker-how-to-run)
 * [Found a bug? Missing a specific feature?](#bug-issues)
+* [Contributing](#tada-contributing)
 * [License](#closed_book-license)
 
 ### Dark theme
@@ -69,9 +70,11 @@ To run the project you need a cellphone with the app of [expo](https://play.goog
 After, fork this repository and clone to your machine. Inside of the project's folder run the following commands:
 
 ```sh
-npm install
+# Install Dependencies
+$ npm install
 
-npm start
+# Run Expo Server
+$ npm start
 ```
 Aferter read the QRCode with the app of [expo](https://play.google.com/store/apps/details?id=host.exp.exponent) or run on emulator.
 
@@ -79,6 +82,10 @@ Aferter read the QRCode with the app of [expo](https://play.google.com/store/app
 # :bug: Issues
 
 Feel free to **file a new issue** with a respective title and description on the the [RandomApp](https://github.com/RafaelGoulartB/RandomApp/issues) repository. If you already found a solution to your problem, **i would love to review your pull request**!
+
+# :tada: Contributing
+
+Check out the [contributing](https://github.com/RafaelGoulartB/RandomGeneratorApp/blob/master/CONTRIBUTING.md) page to see the best places to file issues, start discussions and begin contributing.
 
 # :closed_book: License
 
