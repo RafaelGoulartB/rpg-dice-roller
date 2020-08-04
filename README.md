@@ -23,6 +23,8 @@
    </a>
 </p>
 
+> :rocket: A React-Native app - A Random Number Generator / Dice Roller /  Coin Flip App with dark and light theme
+
 # :pushpin: Table of Contents
 
 * [Technologies](#computer-technologies)
