@@ -25,6 +25,12 @@
 
 > :rocket: A React-Native app - A Random Number Generator / Dice Roller /  Coin Flip App with dark and light theme
 
+<p align="center">
+  <a href="https://play.google.com/store/apps/details?id=com.rafagoulartb.randomapp">
+    <img alt="Get it on Google Play" title="Google Play" src="http://i.imgur.com/mtGRPuM.png" width="140">
+  </a>
+</p>
+
 # :pushpin: Table of Contents
 
 * [Technologies](#computer-technologies)
