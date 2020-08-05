@@ -31,6 +31,16 @@
   </a>
 </p>
 
+<div align="center">
+  <sub>The ramdom app project. Built with ❤︎ by
+    <a href="https://github.com/RafaelGoulartB">Rafael Goulart</a> and
+    <a href="https://github.com/RafaelGoulartB/RandomGeneratorApp/graphs/contributors">
+      contributors
+    </a>
+  </sub>
+</div>
+
+
 # :pushpin: Table of Contents
 
 * [Technologies](#computer-technologies)
