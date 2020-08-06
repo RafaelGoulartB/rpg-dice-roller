@@ -31,6 +31,12 @@
   </a>
 </p>
 
+<p align="center">
+    <a href="README.md">English</a>
+    ·
+    <a href="README-pt.md">Portuguese</a>
+</p>
+
 <div align="center">
   <sub>The ramdom app project. Built with ❤︎ by
     <a href="https://github.com/RafaelGoulartB">Rafael Goulart</a> and
