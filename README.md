@@ -57,27 +57,26 @@
 * [License](#closed_book-license)
 
 ### Dark theme
-<div style="display: flex; flex-direction: "row";">
-  <img src="https://github.com/RafaelGoulartB/RandomNumberApp/blob/master/screenshots/number-dark.png">
-  <img src="https://github.com/RafaelGoulartB/RandomNumberApp/blob/master/screenshots/dice-roll-dark.png">
-  <img src="https://github.com/RafaelGoulartB/RandomNumberApp/blob/master/screenshots/coin-flip-dark.png">
+<div>
+  <img src="./screenshots/number-dark.png">
+  <img src="./screenshots/dice-roll-dark.png">
+  <img src="./screenshots/coin-flip-dark.png">
 </div>
 
 ### Light Theme
-<div style="display: flex; flex-direction: "row";">
-  <img src="https://github.com/RafaelGoulartB/RandomNumberApp/blob/master/screenshots/number-light.png">
-  <img src="https://github.com/RafaelGoulartB/RandomNumberApp/blob/master/screenshots/dice-roll-light.png">
-  <img src="https://github.com/RafaelGoulartB/RandomNumberApp/blob/master/screenshots/coin-flip-light.png">
+<div>
+  <img src="./screenshots/number-light.png">
+  <img src="./screenshots/dice-roll-light.png">
+  <img src="./screenshots/coin-flip-light.png">
 </div>
 
 # :computer: Technologies
 This project was made using the follow technologies:
-<ul>
-  <li><a href="https://reactnative.dev/">React Native</a></li>
-  <li><a href="https://styled-components.com/">Styled Compoments</a></li>
-  <li><a href="https://expo.io/">Expo</a></li>
-  <li><a href="https://eslint.org/">Eslint</a></li>
-</ul>
+
+* [React Native](https://reactnative.dev/)    
+* [Expo](http://expo.io/)     
+* [Styled Compoments](https://styled-components.com/)     
+* [Eslint](https://eslint.org/)     
 
 # :rocket: Features
 
@@ -106,14 +105,14 @@ Feel free to **file a new issue** with a respective title and description on the
 
 # :tada: Contributing
 
-Check out the [contributing](https://github.com/RafaelGoulartB/RandomGeneratorApp/blob/master/CONTRIBUTING.md) page to see the best places to file issues, start discussions and begin contributing.
+Check out the [contributing](./CONTRIBUTING.md) page to see the best places to file issues, start discussions and begin contributing.
 
 # :closed_book: License
 
 Released in 2020 :closed_book: License
 
 Made with love by [Rafael Goulart](https://github.com/RandomApp) 🚀.
-This project is under the [MIT license](https://github.com/RafaelGoulartB/RandomApp/master/LICENSE).
+This project is under the [MIT license](./LICENSE).
 
 
 Give a ⭐️ if this project helped you!
