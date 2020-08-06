@@ -23,7 +23,7 @@
    </a>
 </p>
 
-> :rocket: A React-Native app - A Random Number Generator / Dice Roller /  Coin Flip App with dark and light theme
+> The Random app is a Number Generator / Dice Roller /  Coin Flip App with dark and light theme made using expo SDK 36.
 
 <p align="center">
   <a href="https://play.google.com/store/apps/details?id=com.rafagoulartb.randomapp">
