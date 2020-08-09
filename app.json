@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Random App",
+    "name": "Random",
     "slug": "randomapp",
     "platforms": ["ios", "android", "web"],
     "version": "3.0.0",
