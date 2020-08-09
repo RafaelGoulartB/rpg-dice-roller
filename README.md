@@ -1,5 +1,5 @@
 <p align="center">
-   <img src="https://github.com/RafaelGoulartB/RandomApp/blob/master/assets/icon.png" width="150"/>
+   <img src="./assets/icon.png" width="150"/>
 </p>
  
 <h1 align="center">Random - Dice | Number | Coin</h1>
@@ -49,12 +49,15 @@
 
 # :pushpin: Table of Contents
 
-* [Technologies](#computer-technologies)
-* [Features](#rocket-features)
-* [How to Run](#construction_worker-how-to-run)
-* [Found a bug? Missing a specific feature?](#bug-issues)
-* [Contributing](#tada-contributing)
-* [License](#closed_book-license)
+- [:pushpin: Table of Contents](#pushpin-table-of-contents)
+    - [Dark theme](#dark-theme)
+    - [Light Theme](#light-theme)
+- [:computer: Technologies](#computer-technologies)
+- [:rocket: Features](#rocket-features)
+- [:construction_worker: How to run](#construction_worker-how-to-run)
+- [:bug: Issues](#bug-issues)
+- [:tada: Contributing](#tada-contributing)
+- [:closed_book: License](#closed_book-license)
 
 ### Dark theme
 <div>
