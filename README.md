@@ -49,15 +49,12 @@
 
 # :pushpin: Table of Contents
 
-- [:pushpin: Table of Contents](#pushpin-table-of-contents)
-    - [Dark theme](#dark-theme)
-    - [Light Theme](#light-theme)
-- [:computer: Technologies](#computer-technologies)
-- [:rocket: Features](#rocket-features)
-- [:construction_worker: How to run](#construction_worker-how-to-run)
-- [:bug: Issues](#bug-issues)
-- [:tada: Contributing](#tada-contributing)
-- [:closed_book: License](#closed_book-license)
+- [Technologies](#computer-technologies)
+- [Features](#rocket-features)
+- [How to run](#construction_worker-how-to-run)
+- [Issues](#bug-issues)
+- [Contributing](#tada-contributing)
+- [License](#closed_book-license)
 
 ### Dark theme
 <div>
