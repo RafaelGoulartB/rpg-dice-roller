@@ -49,15 +49,12 @@
 
 # :pushpin: Tabela de Conteúdo
 
-- [:pushpin: Tabela de Conteúdo](#pushpin-tabela-de-conteúdo)
-    - [Dark theme](#dark-theme)
-    - [Light Theme](#light-theme)
-- [:computer: Tecnologias](#computer-tecnologias)
-- [:rocket: Funcionalidades](#rocket-funcionalidades)
-- [:construction_worker: Como rodar](#construction_worker-como-rodar)
-- [:bug: Problemas](#bug-problemas)
-- [:tada: Contribuindo](#tada-contribuindo)
-- [:closed_book: Licencia](#closed_book-licencia)
+- [Tecnologias](#computer-tecnologias)
+- [Funcionalidades](#rocket-funcionalidades)
+- [Como rodar](#construction_worker-como-rodar)
+- [Problemas](#bug-problemas)
+- [Contribuindo](#tada-contribuindo)
+- [Licencia](#closed_book-licencia)
 
 ### Dark theme
 <div>
