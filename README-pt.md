@@ -58,16 +58,16 @@
 
 ### Dark theme
 <div>
-  <img src="./screenshots/number-dark.png">
-  <img src="./screenshots/dice-roll-dark.png">
-  <img src="./screenshots/coin-flip-dark.png">
+  <img src="./.github/number-dark.png">
+  <img src="./.github/dice-roll-dark.png">
+  <img src="./.github/coin-flip-dark.png">
 </div>
 
 ### Light Theme
 <div>
-  <img src="./screenshots/number-light.png">
-  <img src="./screenshots/dice-roll-light.png">
-  <img src="./screenshots/coin-flip-light.png">
+  <img src="./.github/number-light.png">
+  <img src="./.github/dice-roll-light.png">
+  <img src="./.github/coin-flip-light.png">
 </div>
 
 # :computer: Tecnologias
