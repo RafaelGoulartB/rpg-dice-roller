@@ -23,7 +23,7 @@
    </a>
 </p>
 
-> O Random app é um Gerador de números aleatorios / Rodador de dados / Cara ou Coroa com tema dark e light feito usando expo SDK 36.
+> O Random app é um Gerador de números aleatorios / Rodador de dados / Cara ou Coroa com tema dark e light feito usando expo SDK 38.
 
 <p align="center">
   <a href="https://play.google.com/store/apps/details?id=com.rafagoulartb.randomapp">
