@@ -10,7 +10,7 @@
    </a>
   <img alt="Repository size" src="https://img.shields.io/github/repo-size/RafaelGoulartB/RandomGeneratorApp?color=6200ee">
 
-  <img src="https://img.shields.io/badge/version-1.0.0-6200ee.svg?cacheSeconds=2592000" />
+  <img src="https://img.shields.io/badge/version-5.0.0-6200ee.svg?cacheSeconds=2592000" />
   <a href="https://github.com/RafaelGoulartB/RandomNumberApp#readme">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-6200ee.svg" target="_blank" />
   </a>
