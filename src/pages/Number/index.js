@@ -29,7 +29,11 @@ export default function Number() {
   const ResultBoobleRef = useRef();
 
   useEffect(() => {
-    if (resultList.length == 10 || resultList.length == 30) {
+    if (
+      resultList.length == 10 ||
+      resultList.length == 20 ||
+      resultList.length == 30
+    ) {
       openInterstitialAd();
     }
   }, [resultList]);
@@ -66,12 +70,12 @@ export default function Number() {
 
   return (
     <PageContainer>
-      <AdMobBanner
+      {/* <AdMobBanner
         bannerSize="largeBanner"
         adUnitID={env.ads.page.number["ad-banner-id"]}
         servePersonalizedAds
         style={{ marginTop: 12, alignSelf: "center" }}
-      />
+      /> */}
 
       <NumberContentBox style={{ elevation: 3 }}>
         <InputBox>

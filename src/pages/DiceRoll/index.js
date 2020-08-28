@@ -33,7 +33,11 @@ export default function DiceRoll() {
   const DiceImgRef = useRef();
 
   useEffect(() => {
-    if (resultList.length == 10 || resultList.length == 30) {
+    if (
+      resultList.length == 10 ||
+      resultList.length == 20 ||
+      resultList.length == 30
+    ) {
       openInterstitialAd();
     }
   }, [resultList]);
@@ -70,12 +74,11 @@ export default function DiceRoll() {
 
   return (
     <PageContainer>
-      <AdMobBanner
+      {/* <AdMobBanner
         bannerSize="largeBanner"
         adUnitID={env.ads.page.dice["ad-banner-id"]}
-        // servePersonalizedAds
         style={{ marginTop: 12, alignSelf: "center" }}
-      />
+      /> */}
 
       <DiceContextBox style={{ elevation: 3 }}>
         <Animatable.Image
