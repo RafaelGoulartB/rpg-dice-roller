@@ -56,18 +56,18 @@
 - [Contributing](#tada-contributing)
 - [License](#closed_book-license)
 
+### Light Theme
+<div>
+  <img src="./.github/number-light.jpg" width="220">
+  <img src="./.github/dice-roll-light.jpg" width="220">
+  <img src="./.github/coin-flip-light.jpg" width="220">
+</div>
+
 ### Dark theme
 <div>
   <img src="./.github/number-dark.png">
   <img src="./.github/dice-roll-dark.png">
   <img src="./.github/coin-flip-dark.png">
-</div>
-
-### Light Theme
-<div>
-  <img src="./.github/number-light.png">
-  <img src="./.github/dice-roll-light.png">
-  <img src="./.github/coin-flip-light.png">
 </div>
 
 # :computer: Technologies
