@@ -65,9 +65,9 @@
 
 ### Dark theme
 <div>
-  <img src="./.github/number-dark.png">
-  <img src="./.github/dice-roll-dark.png">
-  <img src="./.github/coin-flip-dark.png">
+  <img src="./.github/number-dark.jpg" width="220">
+  <img src="./.github/dice-roll-dark.jpg" width="220">
+  <img src="./.github/coin-flip-dark.jpg" width="220">
 </div>
 
 # :computer: Technologies
