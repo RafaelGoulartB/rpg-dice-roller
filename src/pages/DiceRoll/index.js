@@ -14,6 +14,10 @@ import {
   ResultBooble,
   ClearResultButton,
   ClearResultText,
+  InputBox,
+  InputLabel,
+  InputField,
+  NumberContentBox,
 } from "../../styles";
 import * as Animatable from "react-native-animatable";
 import { AdMobBanner, AdMobInterstitial } from "expo-ads-admob";
@@ -26,6 +30,7 @@ import d20Img from "../../assets/d20.png";
 
 export default function DiceRoll() {
   const [diceImg, setDiceImg] = useState(d6Img);
+  const [modifier, setModifier] = useState("0");
   const [maxNumber, setMaxNumber] = useState(6);
   const [diceResult, setDiceResult] = useState(null);
   const [resultList, setResultList] = useState([]);
@@ -63,8 +68,9 @@ export default function DiceRoll() {
     const randomNumber = Math.floor(Math.random() * Math.floor(maxNumber));
     const diceNumber = randomNumber + 1;
 
-    setDiceResult(diceNumber);
+    setDiceResult(diceNumber + Number(modifier));
     setResultList([diceNumber, ...resultList]);
+    setModifier("0");
   }
 
   function handleClearResult() {
@@ -105,7 +111,20 @@ export default function DiceRoll() {
             <SwitchDiceButtonText>d20</SwitchDiceButtonText>
           </SwitchDiceButton>
         </SwitchDice>
+
+        
       </DiceContextBox>
+      <NumberContentBox style={{ elevation: 3 }}>
+        <InputBox>
+            <InputLabel>Modifier:</InputLabel>
+            <InputField
+              value={modifier}
+              maxLength={3}
+              keyboardType="numeric"
+              onChangeText={(num) => setModifier(num)}
+            />
+        </InputBox>
+      </NumberContentBox>
 
       <MainButton onPress={() => handleDiceRoll()}>
         <TextButton>Roll</TextButton>
