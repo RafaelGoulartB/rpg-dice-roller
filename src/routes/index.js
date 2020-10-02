@@ -36,6 +36,7 @@ export default function Routes() {
           activeColor="#fff"
           inactiveColor="#b0b0b0"
           barStyle={{ backgroundColor: "#6200ee" }}
+          // barStyle={{ backgroundColor: "#1d1d1d" }}
         >
           <Tab.Screen
             name="Number"

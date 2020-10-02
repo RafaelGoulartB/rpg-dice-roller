@@ -12,7 +12,6 @@ const NumberStack = createStackNavigator();
 const DiceStack = createStackNavigator();
 const CoinStack = createStackNavigator();
 
-
 function rightButton(navigation) {
   return {
     headerRight: () => {
@@ -34,6 +33,7 @@ function rightButton(navigation) {
 }
 
 const headerStackStyle = {
+  // backgroundColor: "#1d1d1d",
   backgroundColor: "#6200ee",
 };
 
