@@ -15,7 +15,7 @@ import {
   ClearResultText,
 } from "../../styles";
 import * as Animatable from "react-native-animatable";
-import { AdMobBanner, AdMobInterstitial } from "expo-ads-admob";
+import { AdMobInterstitial } from "expo-ads-admob";
 import env from "../../../.env.json";
 
 export default function Number() {
@@ -70,13 +70,6 @@ export default function Number() {
 
   return (
     <PageContainer>
-      {/* <AdMobBanner
-        bannerSize="largeBanner"
-        adUnitID={env.ads.page.number["ad-banner-id"]}
-        servePersonalizedAds
-        style={{ marginTop: 12, alignSelf: "center" }}
-      /> */}
-
       <NumberContentBox style={{ elevation: 3 }}>
         <InputBox>
           <InputLabel>Min.</InputLabel>
