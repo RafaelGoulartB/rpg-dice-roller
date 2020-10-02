@@ -89,7 +89,7 @@ export const NumberContentBox = styled(ContentBox)`
 `;
 export const InputBox = styled.View``;
 export const InputLabel = styled.Text`
-  font-size: 12px;
+  font-size: 13px;
   color: ${(props) => props.theme.primaryText};
   margin-bottom: 2px;
 `;

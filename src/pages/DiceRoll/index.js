@@ -117,7 +117,7 @@ export default function DiceRoll() {
       </DiceContextBox>
       <NumberContentBox style={{ elevation: 3 }}>
         <InputBox>
-          <InputLabel>Number of results:</InputLabel>
+          <InputLabel>Number of results</InputLabel>
           <InputField
             value={numResult}
             maxLength={2}
@@ -126,7 +126,7 @@ export default function DiceRoll() {
           />
         </InputBox>
         <InputBox>
-          <InputLabel>Modifier:</InputLabel>
+          <InputLabel>Modifier</InputLabel>
           <InputField
             value={modifier}
             maxLength={3}

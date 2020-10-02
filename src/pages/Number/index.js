@@ -72,7 +72,7 @@ export default function Number() {
     <PageContainer>
       <NumberContentBox style={{ elevation: 3 }}>
         <InputBox>
-          <InputLabel>Min.</InputLabel>
+          <InputLabel>Minimum</InputLabel>
           <InputField
             value={minNumber}
             maxLength={3}
@@ -81,7 +81,7 @@ export default function Number() {
           />
         </InputBox>
         <InputBox>
-          <InputLabel>Max.</InputLabel>
+          <InputLabel>Maximum</InputLabel>
           <InputField
             value={maxNumber}
             maxLength={3}
@@ -89,6 +89,9 @@ export default function Number() {
             onChangeText={(num) => setMaxNumber(num)}
           />
         </InputBox>
+      </NumberContentBox>
+
+      <NumberContentBox style={{ elevation: 3 }}>
         <InputBox>
           <InputLabel>Number of Result</InputLabel>
           <InputField
