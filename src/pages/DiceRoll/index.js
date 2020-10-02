@@ -84,7 +84,7 @@ export default function DiceRoll() {
 
   function handleClearResult() {
     setResultList([]);
-    setDiceResult(null);
+    setDiceResult([]);
   }
 
   return (
