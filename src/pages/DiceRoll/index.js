@@ -20,7 +20,7 @@ import {
   NumberContentBox,
 } from "../../styles";
 import * as Animatable from "react-native-animatable";
-import { AdMobBanner, AdMobInterstitial } from "expo-ads-admob";
+import { AdMobInterstitial } from "expo-ads-admob";
 import env from "../../../.env.json";
 
 import d6Img from "../../assets/d6.png";
@@ -31,9 +31,12 @@ import d20Img from "../../assets/d20.png";
 export default function DiceRoll() {
   const [diceImg, setDiceImg] = useState(d6Img);
   const [modifier, setModifier] = useState("0");
+  const [numResult, setNumResult] = useState("1");
   const [maxNumber, setMaxNumber] = useState(6);
-  const [diceResult, setDiceResult] = useState(null);
+
+  const [diceResult, setDiceResult] = useState([]);
   const [resultList, setResultList] = useState([]);
+
   const ResultBoobleRef = useRef();
   const DiceImgRef = useRef();
 
@@ -59,33 +62,33 @@ export default function DiceRoll() {
     DiceImgRef.current.bounceIn();
     setDiceImg(image);
     setMaxNumber(number);
-    setDiceResult(null);
+    setDiceResult([]);
   }
 
   function handleDiceRoll() {
     ResultBoobleRef.current.bounceIn();
     DiceImgRef.current.bounceIn();
-    const randomNumber = Math.floor(Math.random() * Math.floor(maxNumber));
-    const diceNumber = randomNumber + 1;
 
-    setDiceResult(diceNumber + Number(modifier));
-    setResultList([diceNumber, ...resultList]);
+    let newNumbersResults = [];
+
+    for (let i = 0; i < numResult; i++) {
+      const randomNumber = Math.floor(Math.random() * Math.floor(maxNumber));
+      const diceNumber = randomNumber + 1 + Number(modifier);
+
+      newNumbersResults = [...newNumbersResults, diceNumber];
+    }
+    setDiceResult(newNumbersResults);
+    setResultList([...newNumbersResults, ...resultList]);
     setModifier("0");
   }
 
   function handleClearResult() {
     setResultList([]);
-    setDiceResult(null);
+    setDiceResult([]);
   }
 
   return (
     <PageContainer>
-      {/* <AdMobBanner
-        bannerSize="largeBanner"
-        adUnitID={env.ads.page.dice["ad-banner-id"]}
-        style={{ marginTop: 12, alignSelf: "center" }}
-      /> */}
-
       <DiceContextBox style={{ elevation: 3 }}>
         <Animatable.Image
           source={diceImg}
@@ -111,18 +114,25 @@ export default function DiceRoll() {
             <SwitchDiceButtonText>d20</SwitchDiceButtonText>
           </SwitchDiceButton>
         </SwitchDice>
-
-        
       </DiceContextBox>
       <NumberContentBox style={{ elevation: 3 }}>
         <InputBox>
-            <InputLabel>Modifier:</InputLabel>
-            <InputField
-              value={modifier}
-              maxLength={3}
-              keyboardType="numeric"
-              onChangeText={(num) => setModifier(num)}
-            />
+          <InputLabel>Number of results:</InputLabel>
+          <InputField
+            value={numResult}
+            maxLength={2}
+            keyboardType="numeric"
+            onChangeText={(num) => setNumResult(num)}
+          />
+        </InputBox>
+        <InputBox>
+          <InputLabel>Modifier:</InputLabel>
+          <InputField
+            value={modifier}
+            maxLength={3}
+            keyboardType="numeric"
+            onChangeText={(num) => setModifier(num)}
+          />
         </InputBox>
       </NumberContentBox>
 
@@ -138,11 +148,11 @@ export default function DiceRoll() {
           iterationCount={1}
           ref={ResultBoobleRef}
         >
-          {diceResult && (
-            <ResultList>
-              <ResultBooble>{diceResult}</ResultBooble>
-            </ResultList>
-          )}
+          <ResultList>
+            {diceResult.map((result, index) => (
+              <ResultBooble key={index}>{result}</ResultBooble>
+            ))}
+          </ResultList>
         </Animatable.View>
 
         {resultList.length > 0 && <ResultText>Result History:</ResultText>}
