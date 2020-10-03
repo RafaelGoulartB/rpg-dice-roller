@@ -103,7 +103,7 @@ export default function DiceRoll() {
       </DiceContextBox>
       <NumberContentBox style={{ elevation: 3 }}>
         <InputBox>
-          <InputLabel>Number of results</InputLabel>
+          <InputLabel>Number of Results</InputLabel>
           <InputField
             value={numResult}
             maxLength={2}

@@ -78,7 +78,7 @@ export default function Number() {
 
       <NumberContentBox style={{ elevation: 3 }}>
         <InputBox>
-          <InputLabel>Number of Result</InputLabel>
+          <InputLabel>Number of Results</InputLabel>
           <InputField
             value={numResult}
             keyboardType="numeric"
