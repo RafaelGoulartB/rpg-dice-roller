@@ -14,7 +14,7 @@ export function DrawNumber(minNumber, maxNumber, numResult) {
   return drawNumberResults;
 }
 
-export function RollDice(maxNumber, modifier, numResult) {
+export function RollDice(maxNumber, modifier = 0, numResult) {
   let diceRollResults = [];
 
   for (let i = 0; i < numResult; i++) {
