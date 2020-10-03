@@ -3,7 +3,7 @@
     "name": "Random",
     "slug": "randomapp",
     "platforms": ["ios", "android", "web"],
-    "version": "5.0.0",
+    "version": "6.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {

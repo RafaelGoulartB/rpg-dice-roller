@@ -42,7 +42,12 @@ export default function Number() {
   function handleDrawNumber() {
     ResultBoobleRef.current.bounceIn();
 
-    const drawNumberResults = DrawNumber(minNumber, maxNumber, numResult);
+    const drawNumberResults = DrawNumber(
+      minNumber,
+      maxNumber,
+      numResult,
+      setNumResult
+    );
 
     setCurrentResult(drawNumberResults);
     setResultList([...drawNumberResults, ...resultList]);

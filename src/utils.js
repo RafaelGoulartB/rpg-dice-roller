@@ -1,6 +1,11 @@
 import { AdMobInterstitial } from "expo-ads-admob";
 
-export function DrawNumber(minNumber, maxNumber, numResult) {
+export function DrawNumber(minNumber, maxNumber, numResult, setNumResult) {
+  if (numResult < 1) {
+    numResult = 1;
+    setNumResult("1");
+  }
+
   let drawNumberResults = [];
 
   for (let i = 0; i < numResult; i++) {
@@ -14,7 +19,11 @@ export function DrawNumber(minNumber, maxNumber, numResult) {
   return drawNumberResults;
 }
 
-export function RollDice(maxNumber, modifier = 0, numResult) {
+export function RollDice(maxNumber, modifier = 0, numResult, setNumResult) {
+  if (numResult < 1) {
+    numResult = 1;
+    setNumResult("1");
+  }
   let diceRollResults = [];
 
   for (let i = 0; i < numResult; i++) {

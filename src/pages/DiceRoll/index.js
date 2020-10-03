@@ -62,7 +62,12 @@ export default function DiceRoll() {
     ResultBoobleRef.current.bounceIn();
     DiceImgRef.current.bounceIn();
 
-    const diceRollResults = RollDice(maxNumber, modifier, numResult);
+    const diceRollResults = RollDice(
+      maxNumber,
+      modifier,
+      numResult,
+      setNumResult
+    );
 
     setCurrentResult(diceRollResults);
     setResultList([...diceRollResults, ...resultList]);
