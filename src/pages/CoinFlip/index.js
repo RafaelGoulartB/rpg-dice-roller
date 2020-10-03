@@ -26,6 +26,9 @@ export default function CoinFlip() {
   const ResultBoobleRef = useRef();
 
   useEffect(() => {
+    if (resultList.length > 60) {
+      setResultList(resultList.slice(0, 20));
+    }
     if (
       resultList.length == 10 ||
       resultList.length == 20 ||

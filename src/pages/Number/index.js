@@ -30,6 +30,9 @@ export default function Number() {
   const ResultBoobleRef = useRef();
 
   useEffect(() => {
+    if (resultList.length > 100) {
+      setResultList(resultList.slice(0, 20));
+    }
     if (
       resultList.length == 10 ||
       resultList.length == 20 ||
