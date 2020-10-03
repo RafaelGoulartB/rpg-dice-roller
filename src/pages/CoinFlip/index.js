@@ -14,12 +14,14 @@ import {
   CoinResultBooble,
 } from "../../styles";
 import * as Animatable from "react-native-animatable";
-import { AdMobBanner, AdMobInterstitial } from "expo-ads-admob";
 import env from "../../../.env.json";
+
+import { FlipCoin, openInterstitialAd } from "../../utils";
 
 export default function CoinFlip() {
   const [coin, setCoin] = useState("Flip Me");
   const [resultList, setResultList] = useState([]);
+
   const CoinRef = useRef();
   const ResultBoobleRef = useRef();
 
@@ -29,24 +31,15 @@ export default function CoinFlip() {
       resultList.length == 20 ||
       resultList.length == 30
     ) {
-      openInterstitialAd();
+      openInterstitialAd(env.ads.page.coin["ad-interstitial-id"]);
     }
   }, [resultList]);
-
-  async function openInterstitialAd() {
-    await AdMobInterstitial.setAdUnitID(
-      env.ads.page.coin["ad-interstitial-id"]
-    );
-    await AdMobInterstitial.requestAdAsync({ servePersonalizedAds: true });
-    await AdMobInterstitial.showAdAsync();
-  }
 
   function handleFlip() {
     ResultBoobleRef.current.bounceIn();
     CoinRef.current.bounceIn();
 
-    const randomNumber = Math.round(Math.random() * Math.floor(1));
-    const resultFlip = randomNumber ? "Tails" : "Heads";
+    const resultFlip = FlipCoin();
 
     setCoin(resultFlip);
     setResultList([resultFlip, ...resultList]);
@@ -59,13 +52,6 @@ export default function CoinFlip() {
 
   return (
     <PageContainer>
-      {/* <AdMobBanner
-        bannerSize="largeBanner"
-        adUnitID={env.ads.page.coin["ad-banner-id"]}
-        servePersonalizedAds
-        style={{ marginTop: 12, alignSelf: "center" }}
-      /> */}
-
       <CoinContentBox style={{ elevation: 3 }}>
         <Animatable.View ref={CoinRef}>
           <CoinBox>
@@ -79,7 +65,7 @@ export default function CoinFlip() {
       </MainButton>
 
       <ResultBox style={{ elevation: 3 }}>
-        <ResultText>Result:</ResultText>
+        {coin !== "Flip Me" && <ResultText>Result:</ResultText>}
         <Animatable.View
           animation="bounceIn"
           easing="ease-out"

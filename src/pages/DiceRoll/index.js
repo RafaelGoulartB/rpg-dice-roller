@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Image } from "react-native";
 import {
   PageContainer,
   DiceContextBox,
@@ -20,8 +19,9 @@ import {
   NumberContentBox,
 } from "../../styles";
 import * as Animatable from "react-native-animatable";
-import { AdMobInterstitial } from "expo-ads-admob";
 import env from "../../../.env.json";
+
+import { RollDice, openInterstitialAd } from "../../utils";
 
 import d6Img from "../../assets/d6.png";
 import d8Img from "../../assets/d8.png";
@@ -34,7 +34,7 @@ export default function DiceRoll() {
   const [numResult, setNumResult] = useState("1");
   const [maxNumber, setMaxNumber] = useState(6);
 
-  const [diceResult, setDiceResult] = useState([]);
+  const [currentResult, setCurrentResult] = useState([]);
   const [resultList, setResultList] = useState([]);
 
   const ResultBoobleRef = useRef();
@@ -46,45 +46,31 @@ export default function DiceRoll() {
       resultList.length == 20 ||
       resultList.length == 30
     ) {
-      openInterstitialAd();
+      openInterstitialAd(env.ads.page.dice["ad-interstitial-id"]);
     }
   }, [resultList]);
-
-  async function openInterstitialAd() {
-    await AdMobInterstitial.setAdUnitID(
-      env.ads.page.dice["ad-interstitial-id"]
-    );
-    await AdMobInterstitial.requestAdAsync({ servePersonalizedAds: true });
-    await AdMobInterstitial.showAdAsync();
-  }
 
   function handleDiceChange(image, number) {
     DiceImgRef.current.bounceIn();
     setDiceImg(image);
     setMaxNumber(number);
-    setDiceResult([]);
+    setCurrentResult([]);
+    setModifier("0");
   }
 
   function handleDiceRoll() {
     ResultBoobleRef.current.bounceIn();
     DiceImgRef.current.bounceIn();
 
-    let newNumbersResults = [];
+    const diceRollResults = RollDice(maxNumber, modifier, numResult);
 
-    for (let i = 0; i < numResult; i++) {
-      const randomNumber = Math.floor(Math.random() * Math.floor(maxNumber));
-      const diceNumber = randomNumber + 1 + Number(modifier);
-
-      newNumbersResults = [...newNumbersResults, diceNumber];
-    }
-    setDiceResult(newNumbersResults);
-    setResultList([...newNumbersResults, ...resultList]);
-    setModifier("0");
+    setCurrentResult(diceRollResults);
+    setResultList([...diceRollResults, ...resultList]);
   }
 
   function handleClearResult() {
     setResultList([]);
-    setDiceResult([]);
+    setCurrentResult([]);
   }
 
   return (
@@ -141,7 +127,7 @@ export default function DiceRoll() {
       </MainButton>
 
       <ResultBox style={{ elevation: 3 }}>
-        <ResultText>Result:</ResultText>
+        {currentResult.length > 0 && <ResultText>Result:</ResultText>}
         <Animatable.View
           animation="bounceIn"
           easing="ease-out"
@@ -149,7 +135,7 @@ export default function DiceRoll() {
           ref={ResultBoobleRef}
         >
           <ResultList>
-            {diceResult.map((result, index) => (
+            {currentResult.map((result, index) => (
               <ResultBooble key={index}>{result}</ResultBooble>
             ))}
           </ResultList>

@@ -95,7 +95,7 @@ export const InputLabel = styled.Text`
 `;
 export const InputField = styled.TextInput`
   width: 120px;
-  height: 25px;
+  height: 26px;
   border: 1px solid ${(props) => props.theme.label};
   border-radius: 2px;
   padding-left: 8px;

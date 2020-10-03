@@ -15,15 +15,16 @@ import {
   ClearResultText,
 } from "../../styles";
 import * as Animatable from "react-native-animatable";
-import { AdMobInterstitial } from "expo-ads-admob";
 import env from "../../../.env.json";
+
+import { DrawNumber, openInterstitialAd } from "../../utils";
 
 export default function Number() {
   const [minNumber, setMinNumber] = useState("1");
   const [maxNumber, setMaxNumber] = useState("10");
   const [numResult, setNumResult] = useState("1");
 
-  const [numbersResult, setNumbersResult] = useState([]);
+  const [currentResult, setCurrentResult] = useState([]);
   const [resultList, setResultList] = useState([]);
 
   const ResultBoobleRef = useRef();
@@ -34,38 +35,22 @@ export default function Number() {
       resultList.length == 20 ||
       resultList.length == 30
     ) {
-      openInterstitialAd();
+      openInterstitialAd(env.ads.page.number["ad-interstitial-id"]);
     }
   }, [resultList]);
-
-  async function openInterstitialAd() {
-    await AdMobInterstitial.setAdUnitID(
-      env.ads.page.number["ad-interstitial-id"]
-    );
-    await AdMobInterstitial.requestAdAsync({ servePersonalizedAds: true });
-    await AdMobInterstitial.showAdAsync();
-  }
 
   function handleDrawNumber() {
     ResultBoobleRef.current.bounceIn();
 
-    let newNumbersResults = [];
+    const drawNumberResults = DrawNumber(minNumber, maxNumber, numResult);
 
-    for (let i = 0; i < numResult; i++) {
-      const min = Math.ceil(minNumber);
-      const max = Math.floor(maxNumber) + 1;
-      const randomNumber = Math.floor(Math.random() * (max - min)) + min;
-
-      newNumbersResults = [...newNumbersResults, randomNumber];
-    }
-
-    setNumbersResult(newNumbersResults);
-    setResultList([...newNumbersResults, ...resultList]);
+    setCurrentResult(drawNumberResults);
+    setResultList([...drawNumberResults, ...resultList]);
   }
 
   function handleClearResult() {
     setResultList([]);
-    setNumbersResult([]);
+    setCurrentResult([]);
   }
 
   return (
@@ -108,10 +93,10 @@ export default function Number() {
       </MainButton>
 
       <ResultBox style={{ elevation: 3 }}>
-        <ResultText>Result:</ResultText>
+        {currentResult.length > 0 && <ResultText>Result:</ResultText>}
         <Animatable.View ref={ResultBoobleRef}>
           <ResultList>
-            {numbersResult.map((result, index) => (
+            {currentResult.map((result, index) => (
               <ResultBooble key={index}>{result}</ResultBooble>
             ))}
           </ResultList>
