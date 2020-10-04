@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect } from 'react'
 import {
   PageContainer,
   NumberContentBox,
@@ -10,55 +10,55 @@ import {
   ResultBox,
   ResultList,
   ResultText,
-  ResultBooble,
+  ResultBobble,
   ClearResultButton,
-  ClearResultText,
-} from "../../styles";
-import * as Animatable from "react-native-animatable";
-import env from "../../../.env.json";
+  ClearResultText
+} from '../../styles'
+import * as Animatable from 'react-native-animatable'
+import env from '../../../.env.json'
 
-import { DrawNumber, openInterstitialAd } from "../../utils";
+import { DrawNumber, openInterstitialAd } from '../../utils'
 
 export default function Number() {
-  const [minNumber, setMinNumber] = useState("1");
-  const [maxNumber, setMaxNumber] = useState("10");
-  const [numResult, setNumResult] = useState("1");
+  const [minNumber, setMinNumber] = useState(1)
+  const [maxNumber, setMaxNumber] = useState(10)
+  const [numResult, setNumResult] = useState(1)
 
-  const [currentResult, setCurrentResult] = useState([]);
-  const [resultList, setResultList] = useState([]);
+  const [currentResult, setCurrentResult] = useState<Number[]>([])
+  const [resultList, setResultList] = useState<Number[]>([])
 
-  const ResultBoobleRef = useRef();
+  const ResultBobbleRef = useRef()
 
   useEffect(() => {
     if (resultList.length > 100) {
-      setResultList(resultList.slice(0, 20));
+      setResultList(resultList.slice(0, 20))
     }
     if (
       resultList.length == 10 ||
       resultList.length == 20 ||
       resultList.length == 30
     ) {
-      openInterstitialAd(env.ads.page.number["ad-interstitial-id"]);
+      openInterstitialAd(env.ads.page.number['ad-interstitial-id'])
     }
-  }, [resultList]);
+  }, [resultList])
 
   function handleDrawNumber() {
-    ResultBoobleRef.current.bounceIn();
+    ResultBobbleRef.current.bounceIn()
 
     const drawNumberResults = DrawNumber(
       minNumber,
       maxNumber,
       numResult,
       setNumResult
-    );
+    )
 
-    setCurrentResult(drawNumberResults);
-    setResultList([...drawNumberResults, ...resultList]);
+    setCurrentResult(drawNumberResults)
+    setResultList([...drawNumberResults, ...resultList])
   }
 
   function handleClearResult() {
-    setResultList([]);
-    setCurrentResult([]);
+    setResultList([])
+    setCurrentResult([])
   }
 
   return (
@@ -67,19 +67,19 @@ export default function Number() {
         <InputBox>
           <InputLabel>Minimum</InputLabel>
           <InputField
-            value={minNumber}
+            value={String(minNumber)}
             maxLength={3}
             keyboardType="numeric"
-            onChangeText={(num) => setMinNumber(num)}
+            onChangeText={(num: string) => setMinNumber(parseInt(num, 10) || 0)}
           />
         </InputBox>
         <InputBox>
           <InputLabel>Maximum</InputLabel>
           <InputField
-            value={maxNumber}
+            value={String(maxNumber)}
             maxLength={3}
             keyboardType="numeric"
-            onChangeText={(num) => setMaxNumber(num)}
+            onChangeText={(num: string) => setMaxNumber(parseInt(num, 10) || 0)}
           />
         </InputBox>
       </NumberContentBox>
@@ -88,10 +88,10 @@ export default function Number() {
         <InputBox>
           <InputLabel>Number of Results</InputLabel>
           <InputField
-            value={numResult}
+            value={String(numResult)}
             keyboardType="numeric"
             maxLength={2}
-            onChangeText={(num) => setNumResult(num)}
+            onChangeText={(num: string) => setNumResult(parseInt(num, 10) || 0)}
           />
         </InputBox>
       </NumberContentBox>
@@ -102,10 +102,10 @@ export default function Number() {
 
       <ResultBox style={{ elevation: 3 }}>
         {currentResult.length > 0 && <ResultText>Result:</ResultText>}
-        <Animatable.View ref={ResultBoobleRef}>
+        <Animatable.View ref={ResultBobbleRef}>
           <ResultList>
             {currentResult.map((result, index) => (
-              <ResultBooble key={index}>{result}</ResultBooble>
+              <ResultBobble key={index}>{result}</ResultBobble>
             ))}
           </ResultList>
         </Animatable.View>
@@ -113,7 +113,7 @@ export default function Number() {
         {resultList.length > 0 && <ResultText>Result History:</ResultText>}
         <ResultList>
           {resultList.map((result, index) => (
-            <ResultBooble key={index}>{result}</ResultBooble>
+            <ResultBobble key={index}>{result}</ResultBobble>
           ))}
         </ResultList>
 
@@ -124,5 +124,5 @@ export default function Number() {
         )}
       </ResultBox>
     </PageContainer>
-  );
+  )
 }

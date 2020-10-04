@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect } from 'react'
 import {
   PageContainer,
   DiceContextBox,
@@ -10,75 +10,75 @@ import {
   ResultBox,
   ResultList,
   ResultText,
-  ResultBooble,
+  ResultBobble,
   ClearResultButton,
   ClearResultText,
   InputBox,
   InputLabel,
   InputField,
-  NumberContentBox,
-} from "../../styles";
-import * as Animatable from "react-native-animatable";
-import env from "../../../.env.json";
+  NumberContentBox
+} from '../../styles'
+import * as Animatable from 'react-native-animatable'
+import env from '../../../.env.json'
 
-import { RollDice, openInterstitialAd } from "../../utils";
+import { RollDice, openInterstitialAd } from '../../utils'
 
-import d6Img from "../../assets/d6.png";
-import d8Img from "../../assets/d8.png";
-import d12Img from "../../assets/d12.png";
-import d20Img from "../../assets/d20.png";
+import d6Img from '../../assets/d6.png'
+import d8Img from '../../assets/d8.png'
+import d12Img from '../../assets/d12.png'
+import d20Img from '../../assets/d20.png'
 
 export default function DiceRoll() {
-  const [diceImg, setDiceImg] = useState(d6Img);
-  const [modifier, setModifier] = useState("0");
-  const [numResult, setNumResult] = useState("1");
-  const [maxNumber, setMaxNumber] = useState(6);
+  const [diceImg, setDiceImg] = useState(d6Img)
+  const [modifier, setModifier] = useState(0)
+  const [numResult, setNumResult] = useState(1)
+  const [maxNumber, setMaxNumber] = useState(6)
 
-  const [currentResult, setCurrentResult] = useState([]);
-  const [resultList, setResultList] = useState([]);
+  const [currentResult, setCurrentResult] = useState<Number[]>([])
+  const [resultList, setResultList] = useState<Number[]>([])
 
-  const ResultBoobleRef = useRef();
-  const DiceImgRef = useRef();
+  const ResultBobbleRef = useRef()
+  const DiceImgRef = useRef()
 
   useEffect(() => {
     if (resultList.length > 100) {
-      setResultList(resultList.slice(0, 20));
+      setResultList(resultList.slice(0, 20))
     }
     if (
       resultList.length == 10 ||
       resultList.length == 20 ||
       resultList.length == 30
     ) {
-      openInterstitialAd(env.ads.page.dice["ad-interstitial-id"]);
+      openInterstitialAd(env.ads.page.dice['ad-interstitial-id'])
     }
-  }, [resultList]);
+  }, [resultList])
 
   function handleDiceChange(image, number) {
-    DiceImgRef.current.bounceIn();
-    setDiceImg(image);
-    setMaxNumber(number);
-    setCurrentResult([]);
-    setModifier("0");
+    DiceImgRef.current.bounceIn()
+    setDiceImg(image)
+    setMaxNumber(number)
+    setCurrentResult([])
+    setModifier('0')
   }
 
   function handleDiceRoll() {
-    ResultBoobleRef.current.bounceIn();
-    DiceImgRef.current.bounceIn();
+    ResultBobbleRef.current.bounceIn()
+    DiceImgRef.current.bounceIn()
 
     const diceRollResults = RollDice(
       maxNumber,
       modifier,
       numResult,
       setNumResult
-    );
+    )
 
-    setCurrentResult(diceRollResults);
-    setResultList([...diceRollResults, ...resultList]);
+    setCurrentResult(diceRollResults)
+    setResultList([...diceRollResults, ...resultList])
   }
 
   function handleClearResult() {
-    setResultList([]);
-    setCurrentResult([]);
+    setResultList([])
+    setCurrentResult([])
   }
 
   return (
@@ -113,19 +113,19 @@ export default function DiceRoll() {
         <InputBox>
           <InputLabel>Number of Results</InputLabel>
           <InputField
-            value={numResult}
+            value={String(numResult)}
             maxLength={2}
             keyboardType="numeric"
-            onChangeText={(num) => setNumResult(num)}
+            onChangeText={(num: string) => setNumResult(parseInt(num, 10) || 0)}
           />
         </InputBox>
         <InputBox>
           <InputLabel>Modifier</InputLabel>
           <InputField
-            value={modifier}
+            value={String(modifier)}
             maxLength={3}
             keyboardType="numeric"
-            onChangeText={(num) => setModifier(num)}
+            onChangeText={(num: string) => setModifier(parseInt(num, 10) || 0)}
           />
         </InputBox>
       </NumberContentBox>
@@ -140,11 +140,11 @@ export default function DiceRoll() {
           animation="bounceIn"
           easing="ease-out"
           iterationCount={1}
-          ref={ResultBoobleRef}
+          ref={ResultBobbleRef}
         >
           <ResultList>
             {currentResult.map((result, index) => (
-              <ResultBooble key={index}>{result}</ResultBooble>
+              <ResultBobble key={index}>{result}</ResultBobble>
             ))}
           </ResultList>
         </Animatable.View>
@@ -152,7 +152,7 @@ export default function DiceRoll() {
         {resultList.length > 0 && <ResultText>Result History:</ResultText>}
         <ResultList>
           {resultList.map((result, index) => (
-            <ResultBooble key={index}>{result}</ResultBooble>
+            <ResultBobble key={index}>{result}</ResultBobble>
           ))}
         </ResultList>
 
@@ -163,5 +163,5 @@ export default function DiceRoll() {
         )}
       </ResultBox>
     </PageContainer>
-  );
+  )
 }

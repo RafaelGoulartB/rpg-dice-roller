@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect } from 'react'
 import {
   PageContainer,
   CoinContentBox,
@@ -11,46 +11,46 @@ import {
   ResultText,
   ClearResultButton,
   ClearResultText,
-  CoinResultBooble,
-} from "../../styles";
-import * as Animatable from "react-native-animatable";
-import env from "../../../.env.json";
+  CoinResultBobble
+} from '../../styles'
+import * as Animatable from 'react-native-animatable'
+import env from '../../../.env.json'
 
-import { FlipCoin, openInterstitialAd } from "../../utils";
+import { FlipCoin, openInterstitialAd } from '../../utils'
 
-export default function CoinFlip() {
-  const [coin, setCoin] = useState("Flip Me");
-  const [resultList, setResultList] = useState([]);
+const CoinFlip: React.FC = () => {
+  const [coin, setCoin] = useState('Flip Me')
+  const [resultList, setResultList] = useState<String[]>([])
 
-  const CoinRef = useRef();
-  const ResultBoobleRef = useRef();
+  const CoinRef = useRef()
+  const ResultBobbleRef = useRef()
 
   useEffect(() => {
     if (resultList.length > 60) {
-      setResultList(resultList.slice(0, 20));
+      setResultList(resultList.slice(0, 20))
     }
     if (
       resultList.length == 10 ||
       resultList.length == 20 ||
       resultList.length == 30
     ) {
-      openInterstitialAd(env.ads.page.coin["ad-interstitial-id"]);
+      openInterstitialAd(env.ads.page.coin['ad-interstitial-id'])
     }
-  }, [resultList]);
+  }, [resultList])
 
   function handleFlip() {
-    ResultBoobleRef.current.bounceIn();
-    CoinRef.current.bounceIn();
+    ResultBobbleRef.current.bounceIn()
+    CoinRef.current.bounceIn()
 
-    const resultFlip = FlipCoin();
+    const resultFlip = FlipCoin()
 
-    setCoin(resultFlip);
-    setResultList([resultFlip, ...resultList]);
+    setCoin(resultFlip)
+    setResultList([resultFlip, ...resultList])
   }
 
   function handleClearResult() {
-    setCoin("Flip Me");
-    setResultList([]);
+    setCoin('Flip Me')
+    setResultList([])
   }
 
   return (
@@ -68,16 +68,16 @@ export default function CoinFlip() {
       </MainButton>
 
       <ResultBox style={{ elevation: 3 }}>
-        {coin !== "Flip Me" && <ResultText>Result:</ResultText>}
+        {coin !== 'Flip Me' && <ResultText>Result:</ResultText>}
         <Animatable.View
           animation="bounceIn"
           easing="ease-out"
           iterationCount={1}
-          ref={ResultBoobleRef}
+          ref={ResultBobbleRef}
         >
-          {coin !== "Flip Me" && (
+          {coin !== 'Flip Me' && (
             <ResultList>
-              <CoinResultBooble>{coin}</CoinResultBooble>
+              <CoinResultBobble>{coin}</CoinResultBobble>
             </ResultList>
           )}
         </Animatable.View>
@@ -85,7 +85,7 @@ export default function CoinFlip() {
         {resultList.length > 0 && <ResultText>Result History:</ResultText>}
         <ResultList>
           {resultList.map((result, index) => (
-            <CoinResultBooble key={index}>{result}</CoinResultBooble>
+            <CoinResultBobble key={index}>{result}</CoinResultBobble>
           ))}
         </ResultList>
 
@@ -96,5 +96,7 @@ export default function CoinFlip() {
         )}
       </ResultBox>
     </PageContainer>
-  );
+  )
 }
+
+export default CoinFlip
