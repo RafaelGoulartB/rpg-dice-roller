@@ -58,19 +58,19 @@ export default function DiceRoll() {
     setDiceImg(image)
     setMaxNumber(number)
     setCurrentResult([])
-    setModifier('0')
+    setModifier(0)
   }
 
   function handleDiceRoll() {
     ResultBobbleRef.current.bounceIn()
     DiceImgRef.current.bounceIn()
 
-    const diceRollResults = RollDice(
+    const diceRollResults = RollDice({
       maxNumber,
       modifier,
       numResult,
       setNumResult
-    )
+    })
 
     setCurrentResult(diceRollResults)
     setResultList([...diceRollResults, ...resultList])
