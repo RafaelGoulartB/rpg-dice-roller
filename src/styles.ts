@@ -31,7 +31,7 @@ export const ContentBox = styled.View<{ theme: Theme }>`
   padding: 20px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 20px;
+  margin-top: 18px;
   background-color: ${props => props.theme.primaryColor};
   border-radius: 8px;
 `
@@ -90,17 +90,17 @@ export const NumberContentBox = styled(ContentBox)`
 `
 export const InputBox = styled.View``
 export const InputLabel = styled.Text<{ theme: Theme }>`
-  font-size: 13px;
+  font-size: 12px;
   color: ${props => props.theme.primaryText};
-  margin-bottom: 2px;
+  margin-bottom: 3px;
 `
 export const InputField = styled.TextInput<{ theme: Theme }>`
-  width: 120px;
-  height: 26px;
+  width: 124px;
+  height: 28px;
   border: 1px solid ${props => props.theme.label};
-  border-radius: 2px;
-  padding-left: 8px;
-  margin-bottom: 28px;
+  border-radius: 5px;
+  padding-left: 10px;
+  margin-bottom: 14px;
   color: ${props => props.theme.primaryText};
 `
 export const SwitchRepeat = styled.View`
