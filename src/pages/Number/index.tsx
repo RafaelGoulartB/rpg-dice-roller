@@ -23,6 +23,7 @@ export default function Number() {
   const [minNumber, setMinNumber] = useState(1)
   const [maxNumber, setMaxNumber] = useState(10)
   const [numResult, setNumResult] = useState(1)
+  const [modifier, setModifier] = useState(0)
 
   const [currentResult, setCurrentResult] = useState<Number[]>([])
   const [resultList, setResultList] = useState<Number[]>([])
@@ -45,12 +46,13 @@ export default function Number() {
   function handleDrawNumber() {
     ResultBobbleRef.current.bounceIn()
 
-    const drawNumberResults = DrawNumber(
+    const drawNumberResults = DrawNumber({
       minNumber,
       maxNumber,
+      modifier,
       numResult,
       setNumResult
-    )
+    })
 
     setCurrentResult(drawNumberResults)
     setResultList([...drawNumberResults, ...resultList])
@@ -92,6 +94,15 @@ export default function Number() {
             keyboardType="numeric"
             maxLength={2}
             onChangeText={(num: string) => setNumResult(parseInt(num, 10) || 0)}
+          />
+        </InputBox>
+        <InputBox>
+          <InputLabel>Modifier</InputLabel>
+          <InputField
+            value={String(modifier)}
+            maxLength={3}
+            keyboardType="numeric"
+            onChangeText={(num: string) => setModifier(parseInt(num, 10) || 0)}
           />
         </InputBox>
       </NumberContentBox>
