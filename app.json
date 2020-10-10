@@ -18,6 +18,7 @@
     "android": {
       "package": "com.rafagoulartb.randomapp",
       "versionCode": 6,
+      "versionName": "2.0.1",
       "config": {
         "googleMobileAdsAppId": "ca-app-pub-3940256099942544~3347511713"
       }

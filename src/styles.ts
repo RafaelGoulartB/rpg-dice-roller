@@ -92,7 +92,7 @@ export const InputBox = styled.View``
 export const InputLabel = styled.Text<{ theme: Theme }>`
   font-size: 12px;
   color: ${props => props.theme.primaryText};
-  margin-bottom: 3px;
+  margin-bottom: 4px;
 `
 export const InputField = styled.TextInput<{ theme: Theme }>`
   width: 124px;
