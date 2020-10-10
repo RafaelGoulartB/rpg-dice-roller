@@ -1,11 +1,21 @@
 import { AdMobInterstitial } from 'expo-ads-admob'
 
-export function DrawNumber(
-  minNumber: number,
-  maxNumber: number,
-  numResult: number,
-  setNumResult
-) {
+interface DrawNumbersProps {
+  minNumber: number
+  maxNumber: number
+  modifier: number
+  numResult: number
+  setNumResult: (num: number) => void
+}
+
+interface DiceRollProps {
+  maxNumber: number
+  modifier: number
+  numResult: number
+  setNumResult: (num: number) => void
+}
+
+export const DrawNumber = ({ minNumber, maxNumber, modifier, numResult, setNumResult }: DrawNumbersProps) => {
   if (numResult < 1) {
     numResult = 1
     setNumResult(1)
@@ -16,7 +26,7 @@ export function DrawNumber(
   for (let i = 0; i < numResult; i++) {
     const min = Math.ceil(minNumber)
     const max = Math.floor(maxNumber) + 1
-    const randomNumber = Math.floor(Math.random() * (max - min)) + min
+    const randomNumber = (Math.floor(Math.random() * (max - min)) + min) + modifier
 
     drawNumberResults = [...drawNumberResults, randomNumber]
   }
@@ -24,21 +34,16 @@ export function DrawNumber(
   return drawNumberResults
 }
 
-export function RollDice(
-  maxNumber: number,
-  modifier: number = 0,
-  numResult: number,
-  setNumResult
-) {
+export const RollDice = ({ maxNumber, modifier, numResult, setNumResult }: DiceRollProps) => {
   if (numResult < 1) {
     numResult = 1
-    setNumResult('1')
+    setNumResult(1)
   }
   let diceRollResults: Array<number> = []
 
   for (let i = 0; i < numResult; i++) {
     const randomNumber = Math.floor(Math.random() * Math.floor(maxNumber))
-    const diceNumber = randomNumber + 1 + Number(modifier)
+    const diceNumber = randomNumber + 1 + modifier
 
     diceRollResults = [...diceRollResults, diceNumber]
   }
