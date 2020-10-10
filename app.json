@@ -17,7 +17,7 @@
     "assetBundlePatterns": ["**/*"],
     "android": {
       "package": "com.rafagoulartb.randomapp",
-      "versionCode": 6,
+      "versionCode": 7,
       "config": {
         "googleMobileAdsAppId": "ca-app-pub-3940256099942544~3347511713"
       }
