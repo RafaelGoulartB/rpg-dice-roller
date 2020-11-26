@@ -23,7 +23,7 @@
    </a>
 </p>
 
-> The Random app is a Number Generator / Dice Roller /  Coin Flip App with dark and light theme made using expo SDK 38.
+> The Random app is a Number Generator / Dice Roller /  Coin Flip App with dark and light theme made using Expo.
 
 <p align="center">
   <a href="https://play.google.com/store/apps/details?id=com.rafagoulartb.randomapp">
