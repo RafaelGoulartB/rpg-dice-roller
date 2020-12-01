@@ -15,15 +15,16 @@ import { dark, light } from '../themes'
 const Tab = createMaterialBottomTabNavigator()
 
 const Routes: React.FC = () => {
+  const darkTheme = false
+
   return (
-    <ThemeProvider theme={false ? dark : light}>
+    <ThemeProvider theme={darkTheme ? dark : light}>
       <NavigationContainer>
         <Tab.Navigator
           initialRouteName="Dice"
           activeColor="#fff"
           inactiveColor="#b0b0b0"
-          barStyle={{ backgroundColor: '#6200ee' }}
-          // barStyle={{ backgroundColor: "#1d1d1d" }}
+          barStyle={{ backgroundColor: darkTheme ? '#1d1d1d' : '#6200ee' }}
         >
           <Tab.Screen
             name="Number"
