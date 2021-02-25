@@ -27,6 +27,7 @@ import d6Img from '../../assets/d6.png'
 import d8Img from '../../assets/d8.png'
 import d12Img from '../../assets/d12.png'
 import d20Img from '../../assets/d20.png'
+import { AdMobBanner } from 'expo-ads-admob'
 
 export default function DiceRoll() {
   const [diceImg, setDiceImg] = useState(d6Img)
@@ -81,8 +82,21 @@ export default function DiceRoll() {
     setCurrentResult([])
   }
 
+  const [showBanner, setShowBanner] = useState(Math.floor(Math.random() * 10))
+
+  console.log(showBanner)
+
   return (
     <PageContainer>
+      {showBanner > 4 && (
+        <AdMobBanner
+          bannerSize="leaderboard"
+          adUnitID={env.ads.page.coin['ad-banner-id']}
+          servePersonalizedAds
+          style={{ marginTop: 12, alignSelf: 'center' }}
+        />
+      )}
+
       <DiceContextBox style={{ elevation: 3 }}>
         <Animatable.Image
           source={diceImg}

@@ -17,6 +17,7 @@ import * as Animatable from 'react-native-animatable'
 import env from '../../../.env.json'
 
 import { FlipCoin, openInterstitialAd } from '../../utils'
+import { AdMobBanner } from 'expo-ads-admob'
 
 const CoinFlip: React.FC = () => {
   const [coin, setCoin] = useState('Flip Me')
@@ -52,6 +53,8 @@ const CoinFlip: React.FC = () => {
     setCoin('Flip Me')
     setResultList([])
   }
+
+  const [showBanner, setShowBanner] = useState(Math.floor(Math.random() * 10))
 
   return (
     <PageContainer>
@@ -95,6 +98,15 @@ const CoinFlip: React.FC = () => {
           </ClearResultButton>
         )}
       </ResultBox>
+
+      {showBanner > 3 && (
+        <AdMobBanner
+          bannerSize="leaderboard"
+          adUnitID={env.ads.page.coin['ad-banner-id']}
+          servePersonalizedAds
+          style={{ marginTop: 12, alignSelf: 'center' }}
+        />
+      )}
     </PageContainer>
   )
 }

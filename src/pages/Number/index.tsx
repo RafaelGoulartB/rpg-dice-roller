@@ -18,6 +18,7 @@ import * as Animatable from 'react-native-animatable'
 import env from '../../../.env.json'
 
 import { DrawNumber, openInterstitialAd } from '../../utils'
+import { AdMobBanner } from 'expo-ads-admob'
 
 export default function Number() {
   const [minNumber, setMinNumber] = useState(1)
@@ -63,6 +64,9 @@ export default function Number() {
     setCurrentResult([])
   }
 
+  const [showBanner, setShowBanner] = useState(Math.floor(Math.random() * 10))
+
+  console.log(showBanner)
   return (
     <PageContainer>
       <NumberContentBox style={{ elevation: 3 }}>
@@ -134,6 +138,15 @@ export default function Number() {
           </ClearResultButton>
         )}
       </ResultBox>
+
+      {showBanner > 3 && (
+        <AdMobBanner
+          bannerSize="leaderboard"
+          adUnitID={env.ads.page.coin['ad-banner-id']}
+          servePersonalizedAds
+          style={{ marginTop: 12, alignSelf: 'center' }}
+        />
+      )}
     </PageContainer>
   )
 }
