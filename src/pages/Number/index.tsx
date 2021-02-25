@@ -66,7 +66,6 @@ export default function Number() {
 
   const [showBanner, setShowBanner] = useState(Math.floor(Math.random() * 10))
 
-  console.log(showBanner)
   return (
     <PageContainer>
       <NumberContentBox style={{ elevation: 3 }}>

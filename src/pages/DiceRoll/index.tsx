@@ -84,8 +84,6 @@ export default function DiceRoll() {
 
   const [showBanner, setShowBanner] = useState(Math.floor(Math.random() * 10))
 
-  console.log(showBanner)
-
   return (
     <PageContainer>
       {showBanner > 4 && (
