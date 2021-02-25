@@ -19,6 +19,8 @@ import env from '../../../.env.json'
 import { FlipCoin, openInterstitialAd } from '../../utils'
 import { AdMobBanner } from 'expo-ads-admob'
 
+const showBanner = Math.floor(Math.random() * 10)
+
 const CoinFlip: React.FC = () => {
   const [coin, setCoin] = useState('Flip Me')
   const [resultList, setResultList] = useState<String[]>([])
@@ -53,8 +55,6 @@ const CoinFlip: React.FC = () => {
     setCoin('Flip Me')
     setResultList([])
   }
-
-  const [showBanner, setShowBanner] = useState(Math.floor(Math.random() * 10))
 
   return (
     <PageContainer>

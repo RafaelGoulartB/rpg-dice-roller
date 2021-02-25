@@ -29,6 +29,8 @@ import d12Img from '../../assets/d12.png'
 import d20Img from '../../assets/d20.png'
 import { AdMobBanner } from 'expo-ads-admob'
 
+const showBanner = Math.floor(Math.random() * 10)
+
 export default function DiceRoll() {
   const [diceImg, setDiceImg] = useState(d6Img)
   const [modifier, setModifier] = useState(0)
@@ -81,8 +83,6 @@ export default function DiceRoll() {
     setResultList([])
     setCurrentResult([])
   }
-
-  const [showBanner, setShowBanner] = useState(Math.floor(Math.random() * 10))
 
   return (
     <PageContainer>

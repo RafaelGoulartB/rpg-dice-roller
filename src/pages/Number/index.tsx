@@ -20,6 +20,8 @@ import env from '../../../.env.json'
 import { DrawNumber, openInterstitialAd } from '../../utils'
 import { AdMobBanner } from 'expo-ads-admob'
 
+const showBanner = Math.floor(Math.random() * 10)
+
 export default function Number() {
   const [minNumber, setMinNumber] = useState(1)
   const [maxNumber, setMaxNumber] = useState(10)
@@ -63,8 +65,6 @@ export default function Number() {
     setResultList([])
     setCurrentResult([])
   }
-
-  const [showBanner, setShowBanner] = useState(Math.floor(Math.random() * 10))
 
   return (
     <PageContainer>
