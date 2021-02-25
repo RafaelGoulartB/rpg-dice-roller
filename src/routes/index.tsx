@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Icon from 'react-native-vector-icons/FontAwesome5'
 
 import { NavigationContainer } from '@react-navigation/native'
@@ -11,20 +11,21 @@ import {
 
 import { ThemeProvider } from 'styled-components'
 import { dark, light } from '../themes'
+import { ThemeContext } from '../contexts/ThemeContext'
 
 const Tab = createMaterialBottomTabNavigator()
 
 const Routes: React.FC = () => {
-  const darkTheme = false
+  const { isDark } = useContext(ThemeContext)
 
   return (
-    <ThemeProvider theme={darkTheme ? dark : light}>
+    <ThemeProvider theme={isDark ? dark : light}>
       <NavigationContainer>
         <Tab.Navigator
           initialRouteName="Dice"
           activeColor="#fff"
           inactiveColor="#b0b0b0"
-          barStyle={{ backgroundColor: darkTheme ? '#1d1d1d' : '#6200ee' }}
+          barStyle={{ backgroundColor: isDark ? '#1d1d1d' : '#6200ee' }}
         >
           <Tab.Screen
             name="Number"

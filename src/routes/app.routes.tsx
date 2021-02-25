@@ -1,8 +1,9 @@
 import React from 'react'
-
 import { createStackNavigator } from '@react-navigation/stack'
-// import Icon from 'react-native-vector-icons/FontAwesome5'
-// import { TouchableOpacity } from 'react-native'
+import Icon from 'react-native-vector-icons/FontAwesome5'
+import { TouchableOpacity } from 'react-native'
+import { useContext } from 'react'
+import { ThemeContext } from '../contexts/ThemeContext'
 
 import NumberPage from '../pages/Number'
 import DicePage from '../pages/DiceRoll'
@@ -12,63 +13,82 @@ const NumberStack = createStackNavigator()
 const DiceStack = createStackNavigator()
 const CoinStack = createStackNavigator()
 
-// function rightButton(navigation) {
-//   return {
-//     headerRight: () => {
-//       return (
-//         <TouchableOpacity
-//           onPress={async () => {
-//             if (!dark) await AsyncStorage.setItem("@random:theme", "true");
-//             else await AsyncStorage.setItem("@random:theme", "false");
-
-//             setDark(!dark);
-//           }}
-//         >
-//           <Icon name="adjust" color="#ffff" size={20} />
-//         </TouchableOpacity>
-//       );
-//     },
-//     headerRightContainerStyle: { paddingRight: 22 },
-//   };
-// }
-
-const headerStackStyle = {
-  // backgroundColor: "#1d1d1d",
-  backgroundColor: '#6200ee'
+function rightButton(toggleDark: () => void) {
+  return {
+    headerRight: () => {
+      return (
+        <TouchableOpacity
+          onPress={async () => {
+            toggleDark()
+          }}
+        >
+          <Icon name="adjust" color="#ffff" size={20} />
+        </TouchableOpacity>
+      )
+    },
+    headerRightContainerStyle: { paddingRight: 22 }
+  }
 }
 
-export const NumberStackScreen: React.FC = () => (
-  <NumberStack.Navigator
-    screenOptions={{ headerTintColor: 'white', headerStyle: headerStackStyle }}
-  >
-    <NumberStack.Screen
-      name="Number Generator"
-      component={NumberPage}
-      // options={rightButton(navigation)}
-    />
-  </NumberStack.Navigator>
-)
+export const NumberStackScreen: React.FC = () => {
+  const { isDark, toggleDark } = useContext(ThemeContext)
 
-export const DiceStackScreen: React.FC = () => (
-  <DiceStack.Navigator
-    screenOptions={{ headerTintColor: 'white', headerStyle: headerStackStyle }}
-  >
-    <DiceStack.Screen
-      name="Dice Roller"
-      component={DicePage}
-      // options={rightButton(navigation)}
-    />
-  </DiceStack.Navigator>
-)
+  return (
+    <NumberStack.Navigator
+      screenOptions={{
+        headerTintColor: 'white',
+        headerStyle: {
+          backgroundColor: isDark ? '#1d1d1d' : '#6200ee'
+        }
+      }}
+    >
+      <NumberStack.Screen
+        name="Number Generator"
+        component={NumberPage}
+        options={rightButton(toggleDark)}
+      />
+    </NumberStack.Navigator>
+  )
+}
 
-export const CoinStackScreen: React.FC = () => (
-  <CoinStack.Navigator
-    screenOptions={{ headerTintColor: 'white', headerStyle: headerStackStyle }}
-  >
-    <CoinStack.Screen
-      name="Coin Flip"
-      component={CoinPage}
-      // options={rightButton(navigation)}
-    />
-  </CoinStack.Navigator>
-)
+export const DiceStackScreen: React.FC = () => {
+  const { isDark, toggleDark } = useContext(ThemeContext)
+
+  return (
+    <DiceStack.Navigator
+      screenOptions={{
+        headerTintColor: 'white',
+        headerStyle: {
+          backgroundColor: isDark ? '#1d1d1d' : '#6200ee'
+        }
+      }}
+    >
+      <DiceStack.Screen
+        name="Dice Roller"
+        component={DicePage}
+        options={rightButton(toggleDark)}
+      />
+    </DiceStack.Navigator>
+  )
+}
+
+export const CoinStackScreen: React.FC = () => {
+  const { isDark, toggleDark } = useContext(ThemeContext)
+
+  return (
+    <CoinStack.Navigator
+      screenOptions={{
+        headerTintColor: 'white',
+        headerStyle: {
+          backgroundColor: isDark ? '#1d1d1d' : '#6200ee'
+        }
+      }}
+    >
+      <CoinStack.Screen
+        name="Coin Flip"
+        component={CoinPage}
+        options={rightButton(toggleDark)}
+      />
+    </CoinStack.Navigator>
+  )
+}
