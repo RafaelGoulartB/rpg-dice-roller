@@ -13,7 +13,7 @@ export const ThemeContext = createContext({} as ThemeContextData)
 export function ThemeProvider({
   children
 }: ThemeProviderProps): React.ReactElement {
-  const [isDark, setIsDark] = useState(true)
+  const [isDark, setIsDark] = useState(false)
 
   function toggleDark() {
     setIsDark(!isDark)
