@@ -3,7 +3,7 @@
     "name": "Random",
     "slug": "randomapp",
     "platforms": ["ios", "android", "web"],
-    "version": "8.0.0",
+    "version": "8.0.1",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -18,7 +18,7 @@
     "android": {
       "package": "com.rafagoulartb.randomapp",
       "permissions": [],
-      "versionCode": 9,
+      "versionCode": 11,
       "config": {
         "googleMobileAdsAppId": "ca-app-pub-3940256099942544~3347511713"
       }
