@@ -28,7 +28,6 @@ import d8Img from '../../assets/d8.png'
 import d12Img from '../../assets/d12.png'
 import d20Img from '../../assets/d20.png'
 import { AdMobBanner } from 'expo-ads-admob'
-import { ViewProps } from 'react-native'
 
 const showBanner = Math.floor(Math.random() * 10)
 
