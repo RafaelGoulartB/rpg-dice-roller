@@ -25,8 +25,8 @@ const CoinFlip: React.FC = () => {
   const [coin, setCoin] = useState('Flip Me')
   const [resultList, setResultList] = useState<String[]>([])
 
-  const CoinRef = useRef()
-  const ResultBobbleRef = useRef()
+  const CoinRef = useRef<any>()
+  const ResultBobbleRef = useRef<any>()
 
   useEffect(() => {
     if (resultList.length > 60) {
@@ -42,8 +42,8 @@ const CoinFlip: React.FC = () => {
   }, [resultList])
 
   function handleFlip() {
-    ResultBobbleRef.current.bounceIn()
-    CoinRef.current.bounceIn()
+    ResultBobbleRef.current!.bounceIn()
+    CoinRef.current!.bounceIn()
 
     const resultFlip = FlipCoin()
 

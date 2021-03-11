@@ -31,7 +31,7 @@ export default function Number() {
   const [currentResult, setCurrentResult] = useState<Number[]>([])
   const [resultList, setResultList] = useState<Number[]>([])
 
-  const ResultBobbleRef = useRef()
+  const ResultBobbleRef = useRef<any>()
 
   useEffect(() => {
     if (resultList.length > 100) {
@@ -47,7 +47,7 @@ export default function Number() {
   }, [resultList])
 
   function handleDrawNumber() {
-    ResultBobbleRef.current.bounceIn()
+    ResultBobbleRef.current!.bounceIn()
 
     const drawNumberResults = DrawNumber({
       minNumber,

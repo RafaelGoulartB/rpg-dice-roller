@@ -28,6 +28,7 @@ import d8Img from '../../assets/d8.png'
 import d12Img from '../../assets/d12.png'
 import d20Img from '../../assets/d20.png'
 import { AdMobBanner } from 'expo-ads-admob'
+import { ViewProps } from 'react-native'
 
 const showBanner = Math.floor(Math.random() * 10)
 
@@ -40,8 +41,8 @@ export default function DiceRoll() {
   const [currentResult, setCurrentResult] = useState<Number[]>([])
   const [resultList, setResultList] = useState<Number[]>([])
 
-  const ResultBobbleRef = useRef()
-  const DiceImgRef = useRef()
+  const ResultBobbleRef = useRef<any>()
+  const DiceImgRef = useRef<any>()
 
   useEffect(() => {
     if (resultList.length > 100) {
@@ -56,8 +57,8 @@ export default function DiceRoll() {
     }
   }, [resultList])
 
-  function handleDiceChange(image, number) {
-    DiceImgRef.current.bounceIn()
+  function handleDiceChange(image: any, number: number) {
+    DiceImgRef.current!.bounceIn()
     setDiceImg(image)
     setMaxNumber(number)
     setCurrentResult([])
@@ -65,8 +66,8 @@ export default function DiceRoll() {
   }
 
   function handleDiceRoll() {
-    ResultBobbleRef.current.bounceIn()
-    DiceImgRef.current.bounceIn()
+    ResultBobbleRef.current!.bounceIn()
+    DiceImgRef.current!.bounceIn()
 
     const diceRollResults = RollDice({
       maxNumber,
