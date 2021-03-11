@@ -91,10 +91,10 @@ After, fork this repository and clone to your machine. Inside of the project's f
 
 ```sh
 # Install Dependencies
-$ npm install
+$ yarn install
 
 # Run Expo Server
-$ npm start
+$ yarn start
 ```
 Aferter read the QRCode with the app of [expo](https://play.google.com/store/apps/details?id=host.exp.exponent) or run on emulator.
 
