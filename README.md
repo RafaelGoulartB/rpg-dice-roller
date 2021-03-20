@@ -10,7 +10,7 @@
    </a>
   <img alt="Repository size" src="https://img.shields.io/github/repo-size/RafaelGoulartB/rpg-dice-roller?color=6200ee">
 
-  <img src="https://img.shields.io/badge/version-7.0.0-6200ee.svg?cacheSeconds=2592000" />
+  <img src="https://img.shields.io/badge/version-2.0.2-6200ee.svg?cacheSeconds=2592000" />
   <a href="https://github.com/RafaelGoulartB/rpg-dice-roller#readme">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-6200ee.svg" target="_blank" />
   </a>
